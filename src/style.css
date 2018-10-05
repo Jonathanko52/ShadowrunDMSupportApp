@@ -1,0 +1,20 @@
+
+
+.PersonalData{
+    width: 300px;
+    height: 600px;
+    top:0;
+    left:0;
+    background-color: lightblue;
+    border: black;
+    border-width: 0.2px;
+    border-style: solid;
+}
+
+.header{
+    font-size: 20px;
+}
+
+.personalDataText{
+    padding-left: 10px;
+}

@@ -1,0 +1,39 @@
+{
+  "name": "reactappsetup",
+  "version": "1.0.0",
+  "description": "react boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "JK",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "i": "^0.3.6",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5"
+  }
+}
