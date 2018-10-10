@@ -10,7 +10,21 @@ export const savePage = (state)=>({
   payload: state
 })
 
+
+
+//actions for the addbox 
+
+export const boxChange = (boxVal)=>({
+  type:types.BOX_CHANGE,
+  payload: boxVal
+})
+
 export const addMeleeWeapon = (data)=>({
   type:types.ADD_MELEEWEAPON,
+  payload: data
+})
+
+export const addRangedWeapon = (data)=>({
+  type:types.ADD_RANGEDWEAPON,
   payload: data
 })

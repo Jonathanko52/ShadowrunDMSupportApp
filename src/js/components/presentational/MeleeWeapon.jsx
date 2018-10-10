@@ -9,7 +9,6 @@ const MeleeWeapon = (props) => (
     <b>AP:</b><input defaultValue={props.ap}></input>
 
 
-
    </form>
 );
 

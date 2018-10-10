@@ -3,7 +3,7 @@ import React from "react";
 const MeleeWeapon = (props) => (
     <form className = {props.className} onSubmit={(event)=>{
         event.preventDefault()
-        props.addMeleeWeapon({
+        props.addAction({
             weapon:document.getElementById('weapon').value,
             reach:document.getElementById('reach').value,
             damage:document.getElementById('damage').value,

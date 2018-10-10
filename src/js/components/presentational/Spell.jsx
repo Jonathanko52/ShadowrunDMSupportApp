@@ -1,6 +1,6 @@
 import React from "react";
 
-const Magic = (props) => (
+const Spell= (props) => (
     <form className = {props.className}>
     <b>Spell/Power/Ritual/ComplexForm:</b><input>{props.spell}</input>
     <b>Type/Target:</b><input>{props.type}</input>
@@ -11,4 +11,4 @@ const Magic = (props) => (
    </form>
 );
 
-export default Magic;
+export default Spell;

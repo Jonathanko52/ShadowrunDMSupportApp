@@ -7,7 +7,8 @@ import CoreCombatInfo from "./CoreCombatInfo.jsx"
 import * as actions from './../../../action/actions';
 import SkillsContainer from './SkillsContainer.jsx';
 import MeleeWeaponsContainer from './MeleeWeaponsContainer.jsx'
-import AddMeleeWeapon from '../presentational/AddMeleeWeapon.jsx'
+import RangedWeaponsContainer from './RangedWeaponsContainer.jsx'
+
 import SelectBox from './SelectBox.jsx'
 
 
@@ -38,6 +39,7 @@ class MainContainer extends Component {
         <IdsLifestyleCurrency />
         <SkillsContainer />
         <MeleeWeaponsContainer />
+        <RangedWeaponsContainer />
         <button onClick = {this.props.savePage}>Save Page</button>
         <SelectBox />
       </div>
