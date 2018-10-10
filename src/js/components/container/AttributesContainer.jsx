@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
-import * as actions from './../../../action/actions';
-import TextBox from './../presentational/TextBox.jsx';
+import * as actions from '../../../action/actions';
+import TextBox from '../presentational/TextBox.jsx';
 
 const mapStateToProps = (store) => {
     return {
@@ -15,7 +15,7 @@ const mapStateToProps = (store) => {
   });
 
 
-class Attributes extends React.Component {
+class AttributesContainer extends React.Component {
     constructor() {
       super();
   
@@ -151,4 +151,4 @@ class Attributes extends React.Component {
     }
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Attributes);
+  export default connect(mapStateToProps, mapDispatchToProps)(AttributesContainer);

@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import PersonalData from "./PersonalData.jsx"
-import Attributes from "./Attributes.jsx"
+import AttributesContainer from "./AttributesContainer.jsx"
 import IdsLifestyleCurrency from "./IdsLifestyleCurrency.jsx"
 import CoreCombatInfo from "./CoreCombatInfo.jsx"
 import * as actions from './../../../action/actions';
+import SkillsContainer from './SkillsContainer.jsx';
+import MeleeWeaponsContainer from './MeleeWeaponsContainer.jsx'
+import AddMeleeWeapon from '../presentational/AddMeleeWeapon.jsx'
+import SelectBox from './SelectBox.jsx'
 
 
 const mapStateToProps = store => ({
@@ -13,7 +17,8 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   // create functions that will dispatch action creators
-  savePage: (state)=> dispatch(actions.savePage(state))
+  savePage: (state)=> dispatch(actions.savePage(state)),
+  addMeleeWeapon: (data) => dispatch(actions.addMeleeWeapon(data))
 
 });
 
@@ -29,10 +34,12 @@ class MainContainer extends Component {
       <div>
         <p className='test'> Thingy</p>
         <PersonalData />
-        <Attributes />
+        <AttributesContainer />
         <IdsLifestyleCurrency />
-        <CoreCombatInfo />
+        <SkillsContainer />
+        <MeleeWeaponsContainer />
         <button onClick = {this.props.savePage}>Save Page</button>
+        <SelectBox />
       </div>
     );
   }

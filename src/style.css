@@ -1,11 +1,21 @@
-
+.WeaponsContainer{
+    width: 1000px;
+    height: 400px;
+    top:0;
+    left:0;
+    background-color: darkgray;
+    border: black;
+    border-width: 0.2px;
+    border-style: solid;
+    float: left;
+}
 
 .PersonalData{
     width: 300px;
     height: 400px;
     top:0;
     left:0;
-    background-color: lightblue;
+    background-color: darkgray;
     border: black;
     border-width: 0.2px;
     border-style: solid;
@@ -17,7 +27,7 @@
         height: 400px;
         top:0;
         left:0;
-        background-color: lightblue;
+        background-color: darkgray;
         border: black;
         border-width: 0.2px;
         border-style: solid;
@@ -29,7 +39,7 @@
     height: 335px;
     top:0;
     left:0;
-    background-color: lightblue;
+    background-color: darkgray;
     float: left;
 
 }

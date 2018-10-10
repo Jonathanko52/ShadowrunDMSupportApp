@@ -1,8 +1,8 @@
 import React from "react";
 
 const TextBox = (props) => (
-    <form className = {props.boxProps}>
-    <b>{props.name}:</b> {props.curVal}<input id = {props.storeVal} size = {props.boxSize}></input>
+    <form className = {props.boxClass}>
+    <b>{props.name}:</b><input id = {props.storeVal} size = {props.boxSize} defaultValue = {props.curVal}></input>
    </form>
 );
 

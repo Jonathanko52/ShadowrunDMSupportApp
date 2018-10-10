@@ -1,7 +1,7 @@
 import * as types from '../action/actionTypes.js'
 
 const initialState = {
-  name:'',
+  name:'Captain Violence',
   metatype:'',
   ethnicity:'',
   age:'',

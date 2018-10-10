@@ -10,3 +10,7 @@ export const savePage = (state)=>({
   payload: state
 })
 
+export const addMeleeWeapon = (data)=>({
+  type:types.ADD_MELEEWEAPON,
+  payload: data
+})
