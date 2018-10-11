@@ -8,8 +8,19 @@ import * as actions from './../../../action/actions';
 import SkillsContainer from './SkillsContainer.jsx';
 import MeleeWeaponsContainer from './MeleeWeaponsContainer.jsx'
 import RangedWeaponsContainer from './RangedWeaponsContainer.jsx'
+import AugmentationContainer from './AugmentationContainer.jsx'
+import ArmorContainer from './ArmorContainer.jsx'
+import ContactContainer from './ContactContainer.jsx'
+import CyberdeckContainer from './CyberdeckContainer.jsx'
+import GearContainer from './GearContainer.jsx'
+import PowerContainer from './PowerContainer.jsx'
+import QualityContainer from './QualityContainer.jsx'
+import SpellContainer from './SpellContainer.jsx'
+import VehicleContainer from './VehicleContainer.jsx'
+
 
 import SelectBox from './SelectBox.jsx'
+
 
 
 const mapStateToProps = store => ({
@@ -40,6 +51,15 @@ class MainContainer extends Component {
         <SkillsContainer />
         <MeleeWeaponsContainer />
         <RangedWeaponsContainer />
+        <AugmentationContainer />
+        <ArmorContainer />
+        <ContactContainer />
+        <CyberdeckContainer />
+        <GearContainer />
+        <PowerContainer />
+        <QualityContainer />
+        <SpellContainer />
+        <VehicleContainer />
         <button onClick = {this.props.savePage}>Save Page</button>
         <SelectBox />
       </div>

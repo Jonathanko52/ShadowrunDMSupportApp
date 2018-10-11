@@ -1,18 +1,18 @@
 import React from "react";
 
-const Armor = (props) => (
+const Skills = (props) => (
     <form className = {props.className} onSubmit={(event)=>{
         event.preventDefault()
         props.remove(props.ind)
 
         }}>
-    <b>Armor:</b><input defaultValue={props.armor}></input>
+    <b>Skill:</b><input defaultValue={props.skill}></input>
     <b>Rating:</b><input defaultValue={props.rating}></input>
-    <b>Notes:</b><input defaultValue={props.notes}></input>
+    <b>Type:</b><input defaultValue={props.type}></input>
 
    <input type="submit" value = "Remove"></input>
 
    </form>
 );
 
-export default Armor;
+export default Skills;

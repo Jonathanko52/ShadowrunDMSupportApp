@@ -9,7 +9,7 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  remove: (ind)=>dispatch(actions.removeRangedWeapon(ind))
 
 });
 
@@ -22,8 +22,7 @@ class MeleeWeaponsContainer extends React.Component {
       let returnArr = [];
       console.log(this.props)
       this.props.rangedWeapons.forEach((cur,ind)=>{
-        console.log(cur)
-        returnArr.push(<RangedWeapon key={ind} weapon={cur.weapon} damage={cur.damage} accuracy={cur.accuracy} ap={cur.ap} mode={cur.mode} rc={cur.rc} ammo={cur.ammo}/>)
+        returnArr.push(<RangedWeapon ind = {ind} remove={this.props.remove} ind = {ind} key={ind} weapon={cur.weapon} damage={cur.damage} accuracy={cur.accuracy} ap={cur.ap} mode={cur.mode} rc={cur.rc} ammo={cur.ammo}/>)
       
       });
 

@@ -1,6 +1,18 @@
-.WeaponsContainer{
+.AddBox{    
     width: 1000px;
-    height: 400px;
+    height: 200px;
+    top:0;
+    left:0;
+    background-color: darkgray;
+    border: black;
+    border-width: 0.2px;
+    border-style: solid;
+    float: left;
+}
+
+.WeaponsContainer{
+    width: 49%;
+    height: 200px;
     top:0;
     left:0;
     background-color: darkgray;

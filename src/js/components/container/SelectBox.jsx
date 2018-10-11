@@ -12,7 +12,18 @@ const mapDispatchToProps = dispatch => ({
   boxChange: (state) => dispatch(actions.boxChange(state)),
   adds:{
   meleeWeapon: (data) => dispatch(actions.addMeleeWeapon(data)),
-  rangedWeapon: (data) => dispatch(actions.addRangedWeapon(data))
+  rangedWeapon: (data) => dispatch(actions.addRangedWeapon(data)),
+  armor: (data) => dispatch(actions.addArmor(data)),
+  agumentation: (data) => dispatch(actions.addAgumentation(data)),
+  contact: (data) => dispatch(actions.addContact(data)),
+  cyberdeck: (data) => dispatch(actions.addCyberdeck(data)),
+  gear: (data) => dispatch(actions.addGear(data)),
+  power: (data) => dispatch(actions.addPower(data)),
+  quality: (data) => dispatch(actions.addQuality(data)),
+  skill: (data) => dispatch(actions.addSkill(data)),
+  spell: (data) => dispatch(actions.addSpell(data)),
+  vehicle: (data) => dispatch(actions.addVehicle(data)),
+
   }
 });
 
@@ -30,11 +41,22 @@ class SelectBox extends Component {
   
     render() {
       return (
-        <div className='WeaponsContainer'>
+        <div className='AddBox'>
         <p className = 'header'><b>Add An Item</b></p>
         <select id="BoxSelect" onChange={this.handleChange}>
-          <option value="meleeWeapon">Melee Weapon</option>
-          <option value="rangedWeapon">Ranged Weapon</option>
+        <option value="meleeWeapon">Melee Weapon</option>
+        <option value="armor">Armor</option>
+        <option value="augmentation">Augmentation</option>
+        <option value="contact">Contact</option>
+        <option value="cyberdeck">Cyberdeck</option>
+        <option value="gear">Gear</option>
+        <option value="power">Power</option>
+        <option value="quality">Quality</option>
+        <option value="rangedWeapon">Ranged Weapon</option>
+        <option value="skill">Skill</option>
+        <option value="spell">Spell</option>
+        <option value="vehicle">Vehicle</option>
+
         </select>
         <AddBox box={this.props.boxDisplay} adds={this.props.adds}></AddBox>
         </div>

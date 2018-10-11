@@ -11,6 +11,7 @@ const mapStateToProps = store => ( {
 );
   
 const mapDispatchToProps = dispatch => ({
+  remove: (ind)=>dispatch(actions.removeCyberdeck(ind))
 
 });
 
