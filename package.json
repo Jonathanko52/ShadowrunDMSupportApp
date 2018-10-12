@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "nodemon server/server.js"
   },
   "keywords": [
     "react"
@@ -18,11 +19,15 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
     "css-loader": "^1.0.0",
+    "express": "^4.16.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "i": "^0.3.6",
+    "path": "^0.12.7",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "style-loader": "^0.22.1",
@@ -31,7 +36,6 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
-    "path": "^0.12.7",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5"

@@ -1,5 +1,8 @@
 export const SUBMIT_TEXT = 'SUBMIT_TEXT'
 export const SAVE_PAGE = "SAVE_PAGE"
+export const SAVE_STATE = "SAVE_STATE"
+export const LOAD_STATE = "SAVE_STATE"
+
 
 
 

@@ -23,15 +23,24 @@ import SelectBox from './SelectBox.jsx'
 
 
 
-const mapStateToProps = store => ({
+const mapStateToProps = (store) => {
+console.log('MAINCONTAINER STORE ACCESS', store)
 
-});
+return {
+  fullAppState:{
+    ...store.addRemove,
+    ...store.app,
+    ...store.personalData
+  }
+}
+
+};
 
 const mapDispatchToProps = dispatch => ({
   // create functions that will dispatch action creators
   savePage: (state)=> dispatch(actions.savePage(state)),
-  addMeleeWeapon: (data) => dispatch(actions.addMeleeWeapon(data))
-
+  addMeleeWeapon: (data) => dispatch(actions.addMeleeWeapon(data)),
+  saveState: (state)=> dispatch(actions.saveState(state))
 });
 
 
@@ -60,7 +69,10 @@ class MainContainer extends Component {
         <QualityContainer />
         <SpellContainer />
         <VehicleContainer />
-        <button onClick = {this.props.savePage}>Save Page</button>
+        <button onClick = {()=>{
+          this.props.savePage()
+          this.props.saveState(this.props.fullAppState)
+          }}>Save Page</button>
         <SelectBox />
       </div>
     );

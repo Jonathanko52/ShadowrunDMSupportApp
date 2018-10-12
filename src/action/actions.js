@@ -10,6 +10,15 @@ export const savePage = (state)=>({
   payload: state
 })
 
+export const saveState = (state)=>({
+  type:types.SAVE_STATE,
+  payload: state
+})
+
+export const loadState = (state)=>({
+  type:types.LOAD_STATE,
+  payload:state
+})
 
 
 //Actions for the addbox 

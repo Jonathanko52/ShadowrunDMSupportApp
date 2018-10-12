@@ -11,12 +11,20 @@ const appReducer = (state=initialState, action)=>{
 
 //////////////////////
     case types.BOX_CHANGE:
-        console.log("REDUCER FIRING")
       return{
         boxDisplay:action.payload
       }
 
+    case types.SAVE_STATE:
+      console.log('APPLICATION STATE',action.payload)
+    return state;
 
+    case types.SAVE_STATE:
+      console.log('APPLICATION STATE',action.payload)
+    return state;
+
+
+    
     default:
     return state;
   }

@@ -20,7 +20,6 @@ class MeleeWeaponsContainer extends React.Component {
   
     render() {
       let returnArr = [];
-      console.log(this.props)
       this.props.rangedWeapons.forEach((cur,ind)=>{
         returnArr.push(<RangedWeapon ind = {ind} remove={this.props.remove} ind = {ind} key={ind} weapon={cur.weapon} damage={cur.damage} accuracy={cur.accuracy} ap={cur.ap} mode={cur.mode} rc={cur.rc} ammo={cur.ammo}/>)
       

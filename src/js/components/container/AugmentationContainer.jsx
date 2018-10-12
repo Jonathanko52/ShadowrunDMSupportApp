@@ -21,9 +21,7 @@ class AugmentationContainer extends React.Component {
   
     render() {
       let returnArr = [];
-      console.log(this.props)
       this.props.augmentations.forEach((cur,ind)=>{
-        console.log(cur)
         returnArr.push(<Augmentations ind = {ind} remove={this.props.remove} key={ind} augmentation={cur.augmentation} rating={cur.rating} notes={cur.notes} essence={cur.essence} />)
       
       });
