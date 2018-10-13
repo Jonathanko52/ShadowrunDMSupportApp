@@ -33,3 +33,9 @@ export const REMOVE_QUALITY = 'REMOVE_QUALITY'
 export const REMOVE_SKILL = 'REMOVE_SKILL'
 export const REMOVE_SPELL = 'REMOVE_SPELL'
 export const REMOVE_VEHICLE = 'REMOVE_VEHICLE'
+
+//fetch actions
+
+export const ITEM_HAS_ERRORED = 'ITEM_HAS_ERRORED'
+export const ITEM_IS_LOADING = 'ITEM_IS_LOADING'
+export const ITEM_FETCH_SUCCESS = 'ITEM_FETCH_SUCCESS'

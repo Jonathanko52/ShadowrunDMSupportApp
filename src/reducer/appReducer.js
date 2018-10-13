@@ -15,12 +15,33 @@ const appReducer = (state=initialState, action)=>{
         boxDisplay:action.payload
       }
 
-    case types.SAVE_STATE:
-      console.log('APPLICATION STATE',action.payload)
-    return state;
+
+//body isn't aprsed into readable stream, possible resulting in 
 
     case types.SAVE_STATE:
       console.log('APPLICATION STATE',action.payload)
+      fetch('http://localhost:3333/saveToDatabase',{
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify(action.payload)
+      }).then((res,err)=>{
+        if(err){
+          console.log('First error',err)
+        }
+        console.log('RESPONSE',res)
+        res.json()
+      }).then((res,err)=>{
+        if(err){
+          console.log("Second error", err)
+        }
+        console.log("SAVE SUCCEEDED", res)
+      }).catch((err)=>{
+        console.log("Catch error", err)
+      })
+
     return state;
 
 

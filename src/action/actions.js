@@ -132,3 +132,23 @@ export const removeVehicle = (data)=>({
   payload: data
 })
 
+// //Fetch Actions
+
+// export function itemsHasErrored(bool) {
+//   return {
+//       type: types.ITEMS_HAS_ERRORED,
+//       // hasErrored: bool
+//   };
+// }
+// export function itemsIsLoading(bool) {
+//   return {
+//       type: types.ITEMS_IS_LOADING,
+//       // isLoading: bool
+//   };
+// }
+// export function itemsFetchDataSuccess(items) {
+//   return {
+//       type: types.ITEMS_FETCH_DATA_SUCCESS,
+//       // items
+//   };
+// }

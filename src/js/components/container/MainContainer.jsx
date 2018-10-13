@@ -24,13 +24,12 @@ import SelectBox from './SelectBox.jsx'
 
 
 const mapStateToProps = (store) => {
-console.log('MAINCONTAINER STORE ACCESS', store)
 
 return {
   fullAppState:{
-    ...store.addRemove,
-    ...store.app,
-    ...store.personalData
+    addRemove:store.addRemove,
+    app:store.app,
+    personalData:store.personalData
   }
 }
 
