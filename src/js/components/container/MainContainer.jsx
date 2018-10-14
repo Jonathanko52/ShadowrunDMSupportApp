@@ -37,7 +37,7 @@ return {
 
 const mapDispatchToProps = dispatch => ({
   // create functions that will dispatch action creators
-  savePersonal: (state)=> dispatch(actions.savePersonal(state)),
+  // savePersonal: (state)=> dispatch(actions.savePersonal(state)),
   updateDatabaseEntry: (state)=> dispatch(actions.updateDatabaseEntry(state)),
   createDatabaseEntry: (state)=>dispatch(actions.createDatabaseEntry(state)),
   retrieveFromDatabase: (state)=>dispatch(actions.retrieveFromDatabase(state))
@@ -70,12 +70,12 @@ class MainContainer extends Component {
         <SpellContainer />
         <VehicleContainer />
         <button onClick = {()=>{
-          this.props.savePersonal()
+          // this.props.savePersonal()
           console.log("STATE TO BE UPDAT$ED", this.props.fullAppState)
           this.props.updateDatabaseEntry(this.props.fullAppState)
           }}>Update Database</button>
         <button onClick = {()=>{
-          this.props.savePersonal()
+          // this.props.savePersonal()
           console.log("STATETOBECREATED", this.props.fullAppState)
           this.props.createDatabaseEntry(this.props.fullAppState)
         }}>Create Database Entry</button>

@@ -32,7 +32,6 @@ const appReducer = (state=initialState, action)=>{
         }
         res.json()
       }).then((res,err)=>{
-        console.log("UPDATE RES",res)
         if(err){
           console.log("Second error", err)
         }

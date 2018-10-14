@@ -2,13 +2,15 @@ const charSheetModel = require('./models/CharSheetModel.js')
 const path = require('path');
 
 module.exports = {
+
     createSheet:(req,res,next)=>{
+        let parsedID = parseInt(req.cookies.ID)
         charSheetModel.create({
+            trackingNumber:parsedID,
             app:req.body.app,
             addRemove:req.body.addRemove,
             personalData:req.body.personalData,
-            userId:req.cookies.ID,
-      },(err)=>{
+      },(err,data)=>{
           if(err){
               res.status(500).sendFile(path.join(__dirname + './../../views/index.html'))
           } else {
@@ -19,18 +21,22 @@ module.exports = {
     },
     //Saves state to mongodb
     saveSheet:(req,res,next)=>{
-      charSheetModel.findOneAndUpdate({userID:req.cookies.ID},{
+      let parsedID = parseInt(req.cookies.ID)
+      charSheetModel.findOneAndUpdate({trackingNumber:parsedID},{
         app:req.body.app,
         addRemove:req.body.addRemove,
         personalData:req.body.personalData,
     },(err)=>{
         if(err){
-            res.status(500).sendFile(path.join(__dirname + './../../views/index.html'))
+            console.log("Server updatefail", err)
+            res.status(500).end()
         } else {
-            res.status(200).sendFile(path.join(__dirname + './../../views/index.html'))
+            console.log("Server update succeeded", err)
+
+            res.status(200).end()
         }
     })
-    next()
+
   },
 
   retrieveSheet:(req,res,next)=>{
@@ -42,7 +48,7 @@ module.exports = {
             console.log('RETRIEVED DATA', data)
         }
     })
-    
+    next()
   }
 
 }

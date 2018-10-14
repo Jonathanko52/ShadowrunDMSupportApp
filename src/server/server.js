@@ -29,8 +29,17 @@ app.post('/register',authController.registerUser,
 
 
 
-app.post('/updateDatabase',taskController.saveSheet, (req,res,next)=>{res.sendFile(path.join(__dirname + './../../views/index.html'))})
-app.post('/createInDatabase',taskController.createSheet, (req,res,next)=>{res.sendFile(path.join(__dirname + './../../views/index.html'))})
+app.post('/updateDatabase',
+    taskController.saveSheet, 
+    (req,res,next)=>{
+        console.log("PAST SAVE SHEET")
+        res.end()
+})
+
+app.post('/createInDatabase',taskController.createSheet, (req,res,next)=>{
+    console.log("PAST CREATE SHEET")
+    res.end()
+})
 
 
 app.listen(3333, ()=>{

@@ -6,10 +6,11 @@ mongoose.connect(URL,()=>{
 });
 
 const charSheetSchema = new mongoose.Schema({
+    trackingNumber:{type: Number},
     app:{type: Array},
     addRemove:{type: Array},
     personalData:{type: Array},
-    userID:{type:Number}
+    userID: {type: Number}
 });
 
 module.exports = mongoose.model('Table', charSheetSchema);
