@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./../assets/css/style.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <form class = 'LoginBox' id="signin" action="/signin" method="POST">
+        <p>Sign In</p>
+        Username:<input id="user" name="user" type="text">
+        <br>
+        Password:<input id="password" name="password" type="text">
+        <br>
+        <button id="loginButton" type ="submit"> Login </button>
+    </form>
+    <form class = 'LoginBox' id="signin" action="/register" method="POST">
+        <p>Register</p>
+        Username:<input id="user" name="user" type="text">
+        <br>
+        Password:<input id="password" name="password" type="text">
+        <br>
+        <button id="registerButton" type ="submit"> Register </button>
+    </form>
+</body>
+</html>

@@ -42,8 +42,7 @@ const personalDataReducers = (state=initialState, action)=>{
   switch(action.type){
 
 //////////////////////
-    case types.SAVE_PAGE:
-        console.log(state)
+    case types.SAVE_PERSONAL:
       let nameVal = document.getElementById('name').value
       let metatypeVal = document.getElementById('metatype').value 
       let ethnicityVal = document.getElementById('ethnicity').value

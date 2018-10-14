@@ -1,4 +1,15 @@
+.LoginBox{
+    width: 400px;
+    height: 200px;
+    top:0;
+    left:0;
+    background-color: darkgray;
+    border: black;
+    border-width: 0.2px;
+    border-style: solid;
+    float: center;
 
+}
 
 .AddBox{    
     width: 1000px;

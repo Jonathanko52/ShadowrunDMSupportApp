@@ -5,13 +5,8 @@ export const submitText = (boxName) => ({
   payload: boxName,
 });
 
-export const savePage = (state)=>({
-  type:types.SAVE_PAGE,
-  payload: state
-})
-
-export const saveState = (state)=>({
-  type:types.SAVE_STATE,
+export const savePersonal = (state)=>({
+  type:types.SAVE_PERSONAL,
   payload: state
 })
 
@@ -19,6 +14,23 @@ export const loadState = (state)=>({
   type:types.LOAD_STATE,
   payload:state
 })
+
+export const createDatabaseEntry = (state)=>({
+  type:types.CREATE_DATABASE_ENTRY,
+  payload:state
+})
+
+export const updateDatabaseEntry = (state)=>({
+  type:types.UPDATE_DATABASE_ENTRY,
+  payload: state
+})
+
+export const retrieveFromDatabase = (state)=>({
+  type:types.RETRIEVE_FROM_DATABASE,
+  payload: state
+})
+
+
 
 
 //Actions for the addbox 
@@ -132,23 +144,4 @@ export const removeVehicle = (data)=>({
   payload: data
 })
 
-// //Fetch Actions
 
-// export function itemsHasErrored(bool) {
-//   return {
-//       type: types.ITEMS_HAS_ERRORED,
-//       // hasErrored: bool
-//   };
-// }
-// export function itemsIsLoading(bool) {
-//   return {
-//       type: types.ITEMS_IS_LOADING,
-//       // isLoading: bool
-//   };
-// }
-// export function itemsFetchDataSuccess(items) {
-//   return {
-//       type: types.ITEMS_FETCH_DATA_SUCCESS,
-//       // items
-//   };
-// }

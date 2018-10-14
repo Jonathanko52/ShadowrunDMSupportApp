@@ -39,6 +39,26 @@ module.exports={
         req.body = data;
         next();
     },
+
+    registerUser: (req,res,next) =>{
+        var client = new pg.Client(dbUrl);
+                client.connect((err)=>{
+                        if(err){
+                            return console.error('postgres connection failed', err);
+                        }
+                    client.query(`INSERT INTO userdata (username, password) VALUES ('${req.body.user}', '${req.body.password}')`); 
+                    (err,result)=>{
+                        if(err){
+                            return console.error('error running query', err);
+                        } else {
+                            console.loer("register success")
+                        }
+                    }
+                })
+            next()
+    },
+
+
     //attach cookie with associated id to user for this session
     attachCookie: (req,res,next) => {
         res.cookie('ID', req.body.toString());
