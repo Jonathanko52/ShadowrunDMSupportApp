@@ -7,9 +7,9 @@ module.exports = {
         let parsedID = parseInt(req.cookies.ID)
         charSheetModel.create({
             trackingNumber:parsedID,
-            app:req.body.app,
-            addRemove:req.body.addRemove,
-            personalData:req.body.personalData,
+            app:[],
+            addRemove:[],
+            personalData:[],
       },(err,data)=>{
           if(err){
               res.status(500).sendFile(path.join(__dirname + './../../views/index.html'))
@@ -40,15 +40,16 @@ module.exports = {
   },
 
   retrieveSheet:(req,res,next)=>{
-    charSheetModel.find({userID:req.cookies.ID},(err,data)=>{
+    let parsedID = parseInt(req.cookies.ID)
+    charSheetModel.find({trackingNumber:parsedID},(err,data)=>{
         if(err){
             console.log('RETRIEVE FAILED')
             res.end()
         } else {
-            console.log('RETRIEVED DATA', data)
+            console.log('RETRIEVE SUCCEEDED',data)
+            res.status(200).json(data).end()
         }
     })
-    next()
   }
 
 }

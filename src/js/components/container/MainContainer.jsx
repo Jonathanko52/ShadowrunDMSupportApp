@@ -40,7 +40,11 @@ const mapDispatchToProps = dispatch => ({
   // savePersonal: (state)=> dispatch(actions.savePersonal(state)),
   updateDatabaseEntry: (state)=> dispatch(actions.updateDatabaseEntry(state)),
   createDatabaseEntry: (state)=>dispatch(actions.createDatabaseEntry(state)),
-  retrieveFromDatabase: (state)=>dispatch(actions.retrieveFromDatabase(state))
+  // retrieveFromDatabase: (state)=>dispatch(actions.retrieveFromDatabase(state))
+  retrieveFromDatabase: ()=>dispatch(actions.fetchProducts()),
+  setAddRemoveState:(state)=>dispatch(actions.retrieveAndSetAddRemove(state)),
+  setAppState:(state)=>dispatch(actions.retrieveAndSetApp(state)),
+  setPersonalState:(state)=>dispatch(actions.retrieveAndSetPersonal(state))
 });
 
 
@@ -56,7 +60,7 @@ class MainContainer extends Component {
         <p className='test'> Thingy</p>
         <PersonalData />
         <AttributesContainer />
-        <IdsLifestyleCurrency />
+        {/* <IdsLifestyleCurrency /> */}
         <SkillsContainer />
         <MeleeWeaponsContainer />
         <RangedWeaponsContainer />
@@ -71,12 +75,10 @@ class MainContainer extends Component {
         <VehicleContainer />
         <button onClick = {()=>{
           // this.props.savePersonal()
-          console.log("STATE TO BE UPDAT$ED", this.props.fullAppState)
           this.props.updateDatabaseEntry(this.props.fullAppState)
           }}>Update Database</button>
         <button onClick = {()=>{
           // this.props.savePersonal()
-          console.log("STATETOBECREATED", this.props.fullAppState)
           this.props.createDatabaseEntry(this.props.fullAppState)
         }}>Create Database Entry</button>
         <button onClick = {()=>{

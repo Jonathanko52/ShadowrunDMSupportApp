@@ -20,7 +20,13 @@ const addReducer = (state=initialState, action)=>{
   
   switch(action.type){
 
-//////////////////////
+    case types.RETRIEVE_AND_SET_ADDREMOVE: 
+
+    return{
+      ...action.payload[0]
+    }
+
+//////////////////////ADD REDUCER
 
     case types.ADD_MELEEWEAPON:
 

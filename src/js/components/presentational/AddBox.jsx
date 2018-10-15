@@ -32,7 +32,7 @@ class AddBox extends Component {
         } else if (this.props.box === 'armor'){
           return <AddArmor addAction={this.props.adds.armor}/>
         } else if (this.props.box === 'augmentation'){
-          return <AddAugmentation addAction={this.props.adds.agumentation}/>
+          return <AddAugmentation addAction={this.props.adds.augmentation}/>
         } else if (this.props.box === 'contact'){
           return <AddContact addAction={this.props.adds.contact}/>
         } else if (this.props.box === 'cyberdeck'){
@@ -47,7 +47,7 @@ class AddBox extends Component {
           return <AddSkill addAction={this.props.adds.skill}/>
         }else if (this.props.box === 'spell'){
           return <AddSpell addAction={this.props.adds.spell}/>
-        }else if (this.props.box === 'rangedWeapon'){
+        }else if (this.props.box === 'vehicle'){
           return <AddVehicle addAction={this.props.adds.vehicle}/>
         }
         

@@ -6,16 +6,16 @@ const Vehicle = (props) => (
         props.remove(props.ind)
 
         }}>
-    <b>Vehicle:</b><input>{props.vehicle}</input>
-    <b>Handling:</b><input>{props.handling}</input>
-    <b>Acceleration:</b><input>{props.acceleration}</input>
-    <b>Speed:</b><input>{props.speed}</input>
-    <b>Pilot:</b><input>{props.pilot}</input>
-    <b>Body:</b><input>{props.body}</input>
-    <b>Armor:</b><input>{props.armor}</input>
-    <b>Sensor:</b><input>{props.sensor}</input>
-    <b>Notes:</b><input>{props.notes}</input>
-    <input type="submit" value = "Remove"></input>
+    <b>Vehicle:</b><input defaultValue={props.vehicle}></input>
+    <b>Handling:</b><input defaultValue={props.handling}></input>
+    <b>Acceleration:</b><input defaultValue={props.acceleration}></input>
+    <b>Speed:</b><input defaultValue={props.speed}></input>
+    <b>Pilot:</b><input defaultValue={props.pilot}></input>
+    <b>Body:</b><input defaultValue={props.body}></input>
+    <b>Armor:</b><input defaultValue={props.armor}></input>
+    <b>Sensor:</b><input defaultValue={props.sensor}></input>
+    <b>Notes:</b><input defaultValue={props.notes}></input>
+    <input type="submit" defaultValue = "Remove"></input>
 
    </form>
 );

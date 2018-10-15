@@ -1,5 +1,7 @@
 import * as types from './actionTypes.js'
 
+//Actions associated with application state/server stuff
+
 export const submitText = (boxName) => ({
   type: types.SUBMIT_TEXT,
   payload: boxName,
@@ -30,8 +32,68 @@ export const retrieveFromDatabase = (state)=>({
   payload: state
 })
 
+export const retrieveAndSetAddRemove = (state)=>({
+  type:types.RETRIEVE_AND_SET_ADDREMOVE,
+  payload: state
+})
+
+export const retrieveAndSetApp = (state)=>({
+  type:types.RETRIEVE_AND_SET_APP,
+  payload: state
+})
+
+export const retrieveAndSetPersonal = (state)=>({
+  type:types.RETRIEVE_AND_SET_PERSONAL,
+  payload: state
+})
 
 
+
+//fetch actions, also under app reducer
+
+export const fetchProductsBegin = () => ({
+  type: types.FETCH_PRODUCTS_BEGIN
+});
+
+export const fetchProductsSuccess = product => ({
+  type: types.FETCH_PRODUCTS_SUCCESS,
+  payload: product
+});
+
+export const fetchProductsError = error => ({
+  type: types.FETCH_PRODUCTS_FAILURE,
+  payload: error
+});
+
+export function fetchProducts() {
+  return dispatch => {
+    dispatch(fetchProductsBegin());
+    return fetch('http://localhost:3333/retrieveFromDatabase',{
+          method: "GET",
+          credentials: "same-origin",
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+    })
+      .then(handleErrors)
+      .then(res => res.json())
+      .then(json => {
+        dispatch(retrieveAndSetPersonal(json[0].personalData))
+        dispatch(retrieveAndSetApp(json[0].app)),
+        dispatch(retrieveAndSetAddRemove(json[0].addRemove))
+      })
+      .catch(error => dispatch(fetchProductsError(error)));
+  };
+}
+
+// Handle HTTP errors since fetch won't.
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+}
 
 //Actions for the addbox 
 //Add actions
@@ -54,7 +116,7 @@ export const addArmor = (data)=>({
   type:types.ADD_ARMOR,
   payload: data
 })
-export const addAugmetation = (data)=>({
+export const addAugmentation = (data)=>({
   type:types.ADD_AUGMENTATION,
   payload: data
 })
@@ -107,7 +169,7 @@ export const removeArmor = (data)=>({
   type:types.REMOVE_ARMOR,
   payload: data
 })
-export const removeAugmetation = (data)=>({
+export const removeAugmentation = (data)=>({
   type:types.REMOVE_AUGMENTATION,
   payload: data
 })

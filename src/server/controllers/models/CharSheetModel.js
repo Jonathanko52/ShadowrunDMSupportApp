@@ -10,7 +10,6 @@ const charSheetSchema = new mongoose.Schema({
     app:{type: Array},
     addRemove:{type: Array},
     personalData:{type: Array},
-    userID: {type: Number}
 });
 
 module.exports = mongoose.model('Table', charSheetSchema);

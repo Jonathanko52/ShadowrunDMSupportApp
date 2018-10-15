@@ -41,6 +41,13 @@ const personalDataReducers = (state=initialState, action)=>{
   
   switch(action.type){
 
+    case types.RETRIEVE_AND_SET_PERSONAL:
+    let newState = {...action.payload[0]}
+    console.log("PERSONAL STATE AT THIS MOMENT", initialState)
+    console.log('RETRIEVE_AND_SET_PERSONAL', newState )
+
+    return newState
+
 //////////////////////
     case types.SAVE_PERSONAL:
       let nameVal = document.getElementById('name').value
@@ -78,7 +85,7 @@ const personalDataReducers = (state=initialState, action)=>{
 
       return{
         name: nameVal,
-        metaType: metatypeVal,
+        metatype: metatypeVal,
         ethnicity: ethnicityVal,
         age: ageVal,
         sex: sexVal,

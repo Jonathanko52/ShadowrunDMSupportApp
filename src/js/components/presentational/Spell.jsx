@@ -6,11 +6,11 @@ const Spell= (props) => (
         props.remove(props.ind)
 
         }}>
-    <b>Spell/Power/Ritual/ComplexForm:</b><input>{props.spell}</input>
-    <b>Type/Target:</b><input>{props.type}</input>
-    <b>Range:</b><input>{props.range}</input>
-    <b>Duration:</b><input>{props.duration}</input>
-    <b>Drain:</b><input>{props.drain}</input>
+    <b>Spell/Power/Ritual/ComplexForm:</b><input value={props.spell}></input>
+    <b>Type/Target:</b><input value={props.type}></input>
+    <b>Range:</b><input value={props.range}></input>
+    <b>Duration:</b><input value={props.duration}></input>
+    <b>Drain:</b><input value={props.drain}></input>
     <input type="submit" value = "Remove"></input>
 
    </form>

@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
 import * as actions from './../../../action/actions';
-
 import TextBox from "../presentational/TextBox.jsx"
 
 const mapStateToProps = (store) => {
@@ -11,8 +10,8 @@ const mapStateToProps = (store) => {
   };
   
   const mapDispatchToProps = dispatch => ({
-      savePersonal: (state)=> dispatch(actions.savePersonal(state)),
-
+    savePersonal: (state)=> dispatch(actions.savePersonal(state)),
+    submitText: (boxName)=>dispatch(actions.submitText(boxName))
   });
 
 

@@ -1,7 +1,10 @@
 import * as types from '../action/actionTypes.js'
 
 const initialState = {
-  boxDisplay:'meleeWeapon'
+  boxDisplay:'meleeWeapon',
+  loading: false,
+  error: null,
+  retrievedState: null,
 
 }
 
@@ -35,7 +38,6 @@ const appReducer = (state=initialState, action)=>{
         if(err){
           console.log("Second error", err)
         }
-        console.log("UPDATE SUCCEEDED")
       }).catch((err)=>{
         console.log("Catch error", err)
       })
@@ -59,37 +61,40 @@ const appReducer = (state=initialState, action)=>{
         if(err){
           console.log("Second error", err)
         }
-        console.log("SAVE SUCCEEDED", res)
       }).catch((err)=>{
         console.log("Catch error", err)
       })
     return state;
 
-      case types.RETRIEVE_FROM_DATABASE:
-      fetch('http://localhost:3333/retrieveFromDatabase',{
-        method: "GET",
-        credentials: "same-origin",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-      }).then((res,err)=>{
-        if(err){
-          console.log('First error',err)
-        }
-        res.json()
-      }).then((res,err)=>{
-        if(err){
-          console.log("Second error", err)
-        }
-        console.log("RETRIEVE SUCCEEDED", res)
+    case types.RETRIEVE_AND_SET_APP:
 
-      }).catch((err)=>{
-        console.log("Catch error", err)
-      })
+    return {
+      ...action.payload[0]
+    };
+    
 
-    return state;
+    case types.FETCH_PRODUCTS_BEGIN:
 
+    return {
+      ...state,
+      loading: true,
+      error: null
+    }
+
+    case types.FETCH_PRODUCTS_SUCCESS:
+    return {
+      ...state,
+      loading: false,
+      retrievedState: action.payload
+    };
+    
+    case types.FETCH_PRODUCTS_FAILURE:
+    return {
+      ...state,
+      loading: false,
+      error: action.payload.error,
+      items: []
+    };
 
     
     default:

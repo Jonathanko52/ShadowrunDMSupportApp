@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
   meleeWeapon: (data) => dispatch(actions.addMeleeWeapon(data)),
   rangedWeapon: (data) => dispatch(actions.addRangedWeapon(data)),
   armor: (data) => dispatch(actions.addArmor(data)),
-  agumentation: (data) => dispatch(actions.addAgumentation(data)),
+  augmentation: (data) => dispatch(actions.addAugmentation(data)),
   contact: (data) => dispatch(actions.addContact(data)),
   cyberdeck: (data) => dispatch(actions.addCyberdeck(data)),
   gear: (data) => dispatch(actions.addGear(data)),

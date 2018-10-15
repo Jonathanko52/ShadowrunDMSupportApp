@@ -13,7 +13,6 @@ const AddVehicle= (props) => (
             armor:document.getElementById('armor').value,
             sensor:document.getElementById('sensor').value,
             notes:document.getElementById('notes').value,
-
         })
     }}>
     <b>Vehicle:</b><input id='vehicle'></input>
@@ -25,12 +24,8 @@ const AddVehicle= (props) => (
     <b>Armor:</b><input id='armor'></input>
     <b>Sensor:</b><input id='sensor'></input>
     <b>Notes:</b><input id='notes'></input>
-
-
-
     <input type="submit"></input>
     </form>
-
 );
 
 export default AddVehicle;

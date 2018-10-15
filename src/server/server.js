@@ -7,8 +7,8 @@ const authController = require('./controllers/authController')
 const taskController = require('./controllers/taskController')
 
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.use('/assets', express.static(__dirname + './../../assets'))
 
@@ -16,19 +16,25 @@ app.get('/', (req,res)=>{
     res.sendFile(path.join(__dirname + './../../views/login.html'));
 });
 
-// app.get('/', (req,res)=>{
-//     res.sendFile(path.join(__dirname + './../../views/index.html'));
-// });
 
-app.post('/signin', authController.checkUser, authController.attachCookie, authController.checkCookie,
+
+
+//checks if user is present in elepaht, attaches id
+app.post('/signin', 
+    authController.checkUser,
+    authController.attachCookie,  
     (req,res,next)=>{res.sendFile(path.join(__dirname + './../../views/index.html'))}
 )
 
-app.post('/register',authController.registerUser,
-(req,res,next)=>{res.sendFile(path.join(__dirname + './../../views/login.html'))})
+//adds new user to elephantSQL,  attaches cookie, creates a mlab table for them, and returns to login page
+app.post('/register',
+    authController.registerUser,
+    authController.attachCookie,
+    taskController.createSheet,
+    (req,res,next)=>{res.sendFile(path.join(__dirname + './../../views/login.html'))})
 
 
-
+//saves current state to mLab
 app.post('/updateDatabase',
     taskController.saveSheet, 
     (req,res,next)=>{
@@ -41,6 +47,10 @@ app.post('/createInDatabase',taskController.createSheet, (req,res,next)=>{
     res.end()
 })
 
+app.get('/retrieveFromDatabase',taskController.retrieveSheet,(req,res,next)=>{
+    console.log("PAST RETRIEVE SHEET")
+    res.end()
+})
 
 app.listen(3333, ()=>{
     console.log('Listening on 3333');

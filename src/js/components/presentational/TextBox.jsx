@@ -5,7 +5,7 @@ const TextBox = (props) => (
     <b>{props.name}:</b><input 
     id = {props.storeVal} 
     size = {props.boxSize} 
-    defaultValue = {props.curVal} 
+    value = {props.curVal} 
     onChange = {()=>{
         props.savePersonal()
         console.log('SAVE PERSONAL INVOKED')

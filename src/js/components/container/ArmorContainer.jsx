@@ -22,7 +22,7 @@ class ArmorContainer extends React.Component {
     render() {
       let returnArr = [];
       this.props.armors.forEach((cur,ind)=>{
-        returnArr.push(<Armor ind = {ind} remove={this.props.remove} key={ind} armor={cur.armor} rating={cur.rating} notes={cur.notes} remove={remove}/>)
+        returnArr.push(<Armor ind = {ind} remove={this.props.remove} key={ind} armor={cur.armor} rating={cur.rating} notes={cur.notes}/>)
       
       });
 
