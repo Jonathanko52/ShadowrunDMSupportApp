@@ -46,16 +46,37 @@ module.exports={
                         if(err){
                             return console.error('postgres connection failed', err);
                         }
-                    client.query(`INSERT INTO userdata (username, password) VALUES ('${req.body.user}', '${req.body.password}')`); 
-                    (err,result)=>{
+                    client.query(`INSERT INTO userdata (username, password) VALUES ('${req.body.user}', '${req.body.password}')`)
+                    .then((result)=>{
                         if(err){
-                            return console.error('error running query', err);
+                            console.error('error running query', err);
                         } else {
-                            console.loer("register success")
+                            console.log("register success")
+                            next()
                         }
-                    }
+                    })
+                    .catch(e=>console.log(e.stack))
                 })
-            next()
+    },
+
+
+    attachCookieOnRegister: (req,res,next) =>{
+        var client = new pg.Client(dbUrl);
+                client.connect((err)=>{
+                        if(err){
+                            return console.error('postgres connection failed', err);
+                        }
+                        client.query(`SELECT trackingnumber FROM userdata WHERE username='${req.body.user}'`)
+                        .then(response=>{
+                            console.log("QUERY RESPONSE",response.rows[0])
+                            console.log("QUERY RESPONSE",typeof response.rows)
+                            console.log("QUERY RESPONSE",response.rows[0])
+                            res.cookie('ID', response.rows[0].trackingnumber);
+
+                            next()
+                        })
+                        .catch(e=>console.log(e.stack))
+                })
     },
 
 

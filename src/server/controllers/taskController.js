@@ -7,14 +7,18 @@ module.exports = {
         let parsedID = parseInt(req.cookies.ID)
         charSheetModel.create({
             trackingNumber:parsedID,
-            app:[],
+            app:[{  boxDisplay:'meleeWeapon',
+            loading: false,
+            error: null,
+            retrievedState: null,}],
             addRemove:[],
             personalData:[],
       },(err,data)=>{
           if(err){
-              res.status(500).sendFile(path.join(__dirname + './../../views/index.html'))
-          } else {
-              res.status(200).sendFile(path.join(__dirname + './../../views/index.html'))
+              console.log("CREATE FAILED")
+            //   res.status(500).sendFile(path.join(__dirname + './views/index.html'))
+          } else{
+            console.log("CREATED SHEET SUCCESSFULLLY")
           }
       })
       next()    
@@ -47,9 +51,10 @@ module.exports = {
             res.end()
         } else {
             console.log('RETRIEVE SUCCEEDED',data)
-            res.status(200).json(data).end()
+            res.status(200).json(data)
         }
     })
+    next()
   }
 
 }
