@@ -4,9 +4,9 @@
   "description": "react boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack",
-    "test": "nodemon src/server/server.js"
+    "start": "nodemon src/server/server.js",
+    "test": "webpack-dev-server --open --mode development",
+    "build": "webpack"
   },
   "keywords": [
     "react"
