@@ -68,9 +68,7 @@ module.exports={
                         }
                         client.query(`SELECT trackingnumber FROM userdata WHERE username='${req.body.user}'`)
                         .then(response=>{
-                            console.log("QUERY RESPONSE",response.rows[0])
-                            console.log("QUERY RESPONSE",typeof response.rows)
-                            console.log("QUERY RESPONSE",response.rows[0])
+
                             res.cookie('ID', response.rows[0].trackingnumber);
 
                             next()
