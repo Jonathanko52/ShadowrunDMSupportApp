@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const port = process.env.PORT || 3000;
 const authController = require('./controllers/authController')
 const taskController = require('./controllers/taskController')
 
@@ -54,6 +55,6 @@ app.get('/retrieveFromDatabase',taskController.retrieveSheet,(req,res,next)=>{
     res.end()
 })
 
-app.listen(process.env.port||3333, ()=>{
-    console.log('Listening on 3333');
+app.listen(port, ()=>{
+    console.log('Listening on 3000');
 });
