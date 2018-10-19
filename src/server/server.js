@@ -54,6 +54,6 @@ app.get('/retrieveFromDatabase',taskController.retrieveSheet,(req,res,next)=>{
     res.end()
 })
 
-app.listen(3333, ()=>{
+app.listen(process.env.port||3333, ()=>{
     console.log('Listening on 3333');
 });
