@@ -1,4 +1,5 @@
 import * as types from '../action/actionTypes.js'
+const port = process.env.PORT || 'http://localhost:5000';
 
 const initialState = {
   boxDisplay:'meleeWeapon',
@@ -21,7 +22,7 @@ const appReducer = (state=initialState, action)=>{
 
 
     case types.UPDATE_DATABASE_ENTRY:
-      fetch('http://localhost:3333/updateDatabase',{
+      fetch(`${port}/updateDatabase`,{
         method: "POST",
         credentials: "same-origin",
         headers: {
@@ -44,7 +45,7 @@ const appReducer = (state=initialState, action)=>{
     return state;
 
     case types.CREATE_DATABASE_ENTRY:
-      fetch('http://localhost:3333/createInDatabase',{
+      fetch(`${port}/createInDatabase`,{
         method: "POST",
         credentials: "same-origin",
         headers: {
