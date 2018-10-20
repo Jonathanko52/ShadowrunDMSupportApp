@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const authController = require('./controllers/authController')
 const taskController = require('./controllers/taskController')
 
@@ -56,5 +56,5 @@ app.get('/retrieveFromDatabase',taskController.retrieveSheet,(req,res,next)=>{
 })
 
 app.listen(port, ()=>{
-    console.log('Listening on', port);
+    console.log(`Listening on ${ PORT }`);
 });
