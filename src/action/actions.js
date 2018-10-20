@@ -68,6 +68,7 @@ export const fetchProductsError = error => ({
 });
 
 export function fetchProducts() {
+  console.log("FETCH PRODUCT PORT", port)
   return dispatch => {
     dispatch(fetchProductsBegin());
     return fetch(`${port}/retrieveFromDatabase`,{
