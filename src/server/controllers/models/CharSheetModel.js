@@ -6,7 +6,7 @@ mongoose.connect(URL,()=>{
 });
 
 const charSheetSchema = new mongoose.Schema({
-    trackingNumber:{type: Number},
+    trackingnumber:{type: Number},
     app:{type: Array},
     addRemove:{type: Array},
     personalData:{type: Array},

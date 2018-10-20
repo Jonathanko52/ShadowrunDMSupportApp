@@ -6,7 +6,7 @@ module.exports = {
     createSheet:(req,res,next)=>{
         let parsedID = parseInt(req.cookies.ID)
         charSheetModel.create({
-            trackingNumber:parsedID,
+            trackingnumber:parsedID,
             app:[{  boxDisplay:'meleeWeapon',
             loading: false,
             error: null,
@@ -26,7 +26,7 @@ module.exports = {
     //Saves state to mongodb
     saveSheet:(req,res,next)=>{
       let parsedID = parseInt(req.cookies.ID)
-      charSheetModel.findOneAndUpdate({trackingNumber:parsedID},{
+      charSheetModel.findOneAndUpdate({trackingnumber:parsedID},{
         app:req.body.app,
         addRemove:req.body.addRemove,
         personalData:req.body.personalData,
@@ -45,7 +45,7 @@ module.exports = {
 
   retrieveSheet:(req,res,next)=>{
     let parsedID = parseInt(req.cookies.ID)
-    charSheetModel.find({trackingNumber:parsedID},(err,data)=>{
+    charSheetModel.find({trackingnumber:parsedID},(err,data)=>{
         if(err){
             console.log('RETRIEVE FAILED')
             res.end()
