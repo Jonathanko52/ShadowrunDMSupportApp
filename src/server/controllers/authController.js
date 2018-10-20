@@ -17,7 +17,7 @@ module.exports={
                         if(err){
                             return console.error('postgres connection failed', err);
                         }
-                    client.query(`SELECT ID FROM userdata WHERE username = '${req.body.user}' AND password = '${req.body.password}';`,(err,result)=>{
+                    client.query(`SELECT trackingnumber FROM userdata WHERE username = '${req.body.user}' AND password = '${req.body.password}';`,(err,result)=>{
                         if(err){
                             return console.error('error running query', err);
                         } else {
@@ -27,9 +27,9 @@ module.exports={
                                 reject(err);
                                 next();
                             } else {
-                                console.log("query success", result.rows[0].id);
+                                console.log("query success", result.rows[0].trackingnumber);
                                 //Assuming promise success, resolves promise as result of query, under "data" const
-                                resolve(result.rows[0].id);
+                                resolve(result.rows[0].trackingnumber);
                             }
                         }
                     });
