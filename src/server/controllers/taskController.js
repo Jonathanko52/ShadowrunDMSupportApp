@@ -32,10 +32,10 @@ module.exports = {
         personalData:req.body.personalData,
     },(err)=>{
         if(err){
-            console.log("Server updatefail", err)
+            console.log("SERVER UPDATE FAILED", err)
             res.status(500).end()
         } else {
-            console.log("Server update succeeded", err)
+            console.log("SERVER UPDATE SUCCEEDED")
 
             res.status(200).end()
         }
@@ -51,10 +51,10 @@ module.exports = {
             res.end()
         } else {
             console.log('RETRIEVE SUCCEEDED',data)
-            res.status(200).json(data)
+            res.json(data)
+            next()
         }
     })
-    next()
   }
 
 }

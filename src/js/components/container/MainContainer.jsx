@@ -41,7 +41,7 @@ const mapDispatchToProps = dispatch => ({
   updateDatabaseEntry: (state)=> dispatch(actions.updateDatabaseEntry(state)),
   createDatabaseEntry: (state)=>dispatch(actions.createDatabaseEntry(state)),
   // retrieveFromDatabase: (state)=>dispatch(actions.retrieveFromDatabase(state))
-  retrieveFromDatabase: ()=>dispatch(actions.fetchProducts()),
+  retrieveDatabaseEntry: ()=>dispatch(actions.fetchProducts()),
   setAddRemoveState:(state)=>dispatch(actions.retrieveAndSetAddRemove(state)),
   setAppState:(state)=>dispatch(actions.retrieveAndSetApp(state)),
   setPersonalState:(state)=>dispatch(actions.retrieveAndSetPersonal(state))
@@ -74,15 +74,18 @@ class MainContainer extends Component {
         <SpellContainer />
         <VehicleContainer />
         <button onClick = {()=>{
-          // this.props.savePersonal()
-          this.props.updateDatabaseEntry(this.props.fullAppState)
-          }}>Update Database</button>
+          let choiceConfirmed = confirm("Are you sure you want to overwrite your previous sheet?")
+          if(choiceConfirmed){
+            alert("Sheet Save to DB")
+            this.props.updateDatabaseEntry(this.props.fullAppState)
+          }
+        }}>Update Database</button>
         <button onClick = {()=>{
-          // this.props.savePersonal()
-          this.props.createDatabaseEntry(this.props.fullAppState)
-        }}>Create Database Entry</button>
-        <button onClick = {()=>{
-        this.props.retrieveFromDatabase()
+          let choiceConfirmed = confirm("Are you sure you don't want to save your current sheet?")
+          if(choiceConfirmed){
+            alert("Sheet loaded")
+           this.props.retrieveDatabaseEntry()
+          }
         }}>Retrieve from Database</button>
           
         <SelectBox />

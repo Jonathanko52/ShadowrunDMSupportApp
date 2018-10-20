@@ -48,7 +48,7 @@ app.post('/createInDatabase',taskController.createSheet, (req,res,next)=>{
 })
 
 app.get('/retrieveFromDatabase',taskController.retrieveSheet,(req,res,next)=>{
-    console.log("PAST RETRIEVE SHEET")
+    console.log("PASSED RETRIEVE SHEET")
     res.end()
 })
 

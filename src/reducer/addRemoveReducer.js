@@ -6,10 +6,10 @@ const initialState = {
  contactArray:[],
  cyberdeckArray:[],
  gearArray:[],
- meleeWeaponArray: [{weapon:'rock', reach:'stones throw', damage:'not much', accuracy:'poor', ap:'none'}],
+ meleeWeaponArray: [],
  powerArray:[],
  qualityArray:[],
- rangedWeaponArray:[{weapon:'ak', damage:'30', accuracy:'4', ap:'2', mode:'semi', rc: 'what?', ammo:'20'}],
+ rangedWeaponArray:[],
  skillArray:[],
  spellArray:[],
  vehicleArray:[]

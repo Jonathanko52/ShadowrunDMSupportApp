@@ -67,7 +67,15 @@ const appReducer = (state=initialState, action)=>{
       })
     return state;
 
-    case types.RETRIEVE_AND_SET_APP:
+    case types.RETRIEVE_DATABASE_ENTRY:
+      fetch(`${post}/retrieveTable`)
+      .then((res)=>res.json()
+      ).then((res)=>{
+        let retrievedState = res
+        console.log("Retrieved Sate", retrievedState)
+      })
+      .catch((err)=>{console.log('fetch failed', err)})
+
 
     return {
       ...action.payload[0]
