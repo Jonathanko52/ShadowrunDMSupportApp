@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "react boilerplate",
   "main": "index.js",
+  "engines": {
+    "node": "9.2.1"
+  },
   "scripts": {
     "start": "nodemon src/server/server.js",
     "test": "webpack-dev-server --open --mode development",
