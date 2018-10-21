@@ -68,7 +68,7 @@ const appReducer = (state=initialState, action)=>{
     return state;
 
     case types.RETRIEVE_DATABASE_ENTRY:
-      fetch(`/retrieveFromDatabase`,{
+      fetch('/retrieveFromDatabase',{
         method: "GET",
         credentials: "same-origin",
         headers: {

@@ -26,7 +26,7 @@ const addReducer = (state=initialState, action)=>{
       ...action.payload[0]
     }
 
-//////////////////////ADD REDUCER
+///////////////////ADD REDUCER
 
     case types.ADD_MELEEWEAPON:
 
