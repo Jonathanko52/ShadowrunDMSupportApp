@@ -17,7 +17,7 @@ import PowerContainer from './PowerContainer.jsx'
 import QualityContainer from './QualityContainer.jsx'
 import SpellContainer from './SpellContainer.jsx'
 import VehicleContainer from './VehicleContainer.jsx'
-const port = process.env.PORT || 'http://localhost:5000';
+// const port = process.env.PORT || 'http://localhost:5000';
 
 
 
@@ -79,7 +79,6 @@ class MainContainer extends Component {
           let choiceConfirmed = confirm("Are you sure you want to overwrite your previous sheet?")
           if(choiceConfirmed){
             alert("Sheet Save to DB")
-            console.log("UPDATE PORT", port)
             this.props.updateDatabaseEntry(this.props.fullAppState)
           }
         }}>Update Database</button>
@@ -87,7 +86,6 @@ class MainContainer extends Component {
           let choiceConfirmed = confirm("Are you sure you don't want to save your current sheet?")
           if(choiceConfirmed){
             alert("Sheet loaded")
-            console.log("Retrieve PORT", port)
            this.props.retrieveDatabaseEntry()
           }
         }}>Retrieve from Database</button>
