@@ -68,7 +68,7 @@ const appReducer = (state=initialState, action)=>{
     return state;
 
     case types.RETRIEVE_DATABASE_ENTRY:
-      fetch(`/retrieveTable`)
+      fetch(`/retrieveFromDatabase`)
       .then((res)=>res.json()
       ).then((res)=>{
         let retrievedState = res
