@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
 
     createSheet:(req,res,next)=>{
+        console.log('COOKIE ID IN CREATESHEER', req.cookies.ID)
         let parsedID = parseInt(req.cookies.ID)
         charSheetModel.create({
             trackingnumber:parsedID,
@@ -15,7 +16,7 @@ module.exports = {
             personalData:[],
       },(err,data)=>{
           if(err){
-              console.log("CREATE FAILED")
+              console.log("CREATE FAILED",err)
             //   res.status(500).sendFile(path.join(__dirname + './views/index.html'))
           } else{
             console.log("CREATED SHEET SUCCESSFULLLY")

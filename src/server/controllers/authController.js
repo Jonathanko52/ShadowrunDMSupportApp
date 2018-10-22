@@ -60,22 +60,43 @@ module.exports={
     },
 
 
+    // attachCookieOnRegister: (req,res,next) =>{
+    //     var client = new pg.Client(dbUrl);
+    //             client.connect((err)=>{
+    //                     if(err){
+    //                         return console.error('postgres connection failed', err);
+    //                     }
+    //                     client.query(`SELECT trackingnumber FROM userdata WHERE username='${req.body.user}'`)
+    //                     .then(response=>{
+    //                         res.cookie('ID', response.rows[0].trackingnumber.toString());
+    //                         console.log("ATTACHING COOKIE ON REGISTER", response.rows[0].trackingnumber)
+    //                     })
+    //                     .then(response=>{
+    //                         console.log("Initiating Next in Attach cookie on register")
+    //                         next()
+    //                     })
+    //                     .catch(e=>console.log(e.stack))
+    //             })
+    // },
     attachCookieOnRegister: (req,res,next) =>{
+        let newCookie;
         var client = new pg.Client(dbUrl);
                 client.connect((err)=>{
                         if(err){
                             return console.error('postgres connection failed', err);
                         }
                         client.query(`SELECT trackingnumber FROM userdata WHERE username='${req.body.user}'`)
-                        .then(response=>{
-
-                            res.cookie('ID', response.rows[0].trackingnumber);
-
+                        .then((response)=>{
+                            newCookie = response.rows[0].trackingnumber;
+                        })
+                        .then((response)=>{
+                            res.cookie('ID', newCookie.toString())
                             next()
                         })
                         .catch(e=>console.log(e.stack))
                 })
     },
+
 
 
     //attach cookie with associated id to user for this session
