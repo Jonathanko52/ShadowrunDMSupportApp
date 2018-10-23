@@ -47,7 +47,7 @@ app.post('/updateDatabase',
 
 app.get('/createInDatabase',taskController.createSheet, (req,res,next)=>{
     console.log("PAST CREATE SHEET")
-    res.end()
+    res.redirect('/')
 })
 
 app.get('/retrieveFromDatabase',taskController.retrieveSheet,(req,res,next)=>{
