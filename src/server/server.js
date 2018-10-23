@@ -45,7 +45,7 @@ app.post('/updateDatabase',
         res.end()
 })
 
-app.post('/createInDatabase',taskController.createSheet, (req,res,next)=>{
+app.get('/createInDatabase',taskController.createSheet, (req,res,next)=>{
     console.log("PAST CREATE SHEET")
     res.end()
 })
