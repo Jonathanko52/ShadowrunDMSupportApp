@@ -28,11 +28,10 @@ app.post('/signin',
 app.post('/register',
     authController.clearCookie,
     authController.registerUser,
-    authController.clearCookie,
     authController.pullCookieOnRegister,
     authController.attachCookie,
     taskController.createSheet,
-    (req,res,next)=>{res.sendFile(path.join(__dirname + './../../views/login.html'))})
+    (req,res,next)=>{res.redirect(path.join(__dirname + './../../views/login.html'))})
     // (req,res,next)=>{res.json()}
     
 
