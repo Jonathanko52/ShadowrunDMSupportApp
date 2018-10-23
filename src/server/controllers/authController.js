@@ -91,7 +91,7 @@ module.exports={
 
     //attach cookie with associated id to user for this session
     attachCookie: (req,res,next) => {
-        console.log("COOKIE GOING IN", req.cookie.ID)
+        console.log("COOKIE GOING IN", req.cookies.ID)
         res.cookie('ID', req.body.toString());
         console.log('cookieattached',req.body.toString());
         next();
