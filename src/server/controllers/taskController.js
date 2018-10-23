@@ -44,6 +44,10 @@ module.exports = {
 
   },
 
+  redirectToCreate:(req,res,next)=>{
+      res.redirect('/createInDatabase')
+  },
+
   retrieveSheet:(req,res,next)=>{
     let parsedID = parseInt(req.cookies.ID)
     charSheetModel.find({trackingnumber:parsedID},(err,data)=>{

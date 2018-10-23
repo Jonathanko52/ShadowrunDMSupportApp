@@ -93,9 +93,7 @@ module.exports={
     attachCookie: (req,res,next) => {
         res.cookie('ID', req.body.toString());
         console.log('cookieattached',req.body.toString());
-        setTimeout(() => {
-            next()
-        }, 3000);
+        next()
  
     },
     //converts cookie into user ID for pulling associated user information from mongoose server

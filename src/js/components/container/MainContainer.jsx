@@ -81,7 +81,7 @@ class MainContainer extends Component {
             alert("Sheet Save to DB")
             this.props.updateDatabaseEntry(this.props.fullAppState)
           }
-        }}>Update Database</button>
+        }}>Save to Database</button>
         <button onClick = {()=>{
           let choiceConfirmed = confirm("Are you sure you don't want to save your current sheet?")
           if(choiceConfirmed){

@@ -30,7 +30,8 @@ app.post('/register',
     authController.registerUser,
     authController.pullCookieOnRegister,
     authController.attachCookie,
-    taskController.createSheet,
+    // taskController.createSheet,
+    taskController.redirectToCreate,
     (req,res,next)=>{res.sendFile(path.join(__dirname + './../../views/login.html'))})
     // (req,res,next)=>{res.json()}
     
