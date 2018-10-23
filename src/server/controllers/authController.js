@@ -1,7 +1,8 @@
 const pass = "xfmH-K3m2a79Oeh21kgUixggztErS5XE";
 const user = "ulurpczi";
 const pg = require('pg');
-const dbUrl = 'postgres://ulurpczi:xfmH-K3m2a79Oeh21kgUixggztErS5XE@nutty-custard-apple.db.elephantsql.com:5432/ulurpczi'
+const dbUrl = 'postgres://ywrnewtivhqrvb:6946f679a0a0030378ed2bb7ad2bc8459da26a679ce22b191b16869121fe2991@ec2-54-83-49-109.compute-1.amazonaws.com:5432/d282d1com73r48'
+
 
 
 
@@ -59,42 +60,27 @@ module.exports={
                 })
     },
 
-
-    // attachCookieOnRegister: (req,res,next) =>{
-    //     var client = new pg.Client(dbUrl);
-    //             client.connect((err)=>{
-    //                     if(err){
-    //                         return console.error('postgres connection failed', err);
-    //                     }
-    //                     client.query(`SELECT trackingnumber FROM userdata WHERE username='${req.body.user}'`)
-    //                     .then(response=>{
-    //                         res.cookie('ID', response.rows[0].trackingnumber.toString());
-    //                         console.log("ATTACHING COOKIE ON REGISTER", response.rows[0].trackingnumber)
-    //                     })
-    //                     .then(response=>{
-    //                         console.log("Initiating Next in Attach cookie on register")
-    //                         next()
-    //                     })
-    //                     .catch(e=>console.log(e.stack))
-    //             })
-    // },
-    attachCookieOnRegister: (req,res,next) =>{
-        let newCookie;
-        var client = new pg.Client(dbUrl);
-                client.connect((err)=>{
-                        if(err){
-                            return console.error('postgres connection failed', err);
-                        }
-                        client.query(`SELECT trackingnumber FROM userdata WHERE username='${req.body.user}'`)
-                        .then((response)=>{
-                            newCookie = response.rows[0].trackingnumber;
+    pullCookieOnRegister: async(req,res,next)=>{
+            let infoForCookie = await function(){
+                return new Promise((resolve,reject)=>{
+                    let client = new pg.Client(dbUrl);
+                    client.connect(()=>{
+                        client.query(`SELECT trackingnumber FROM userdata WHERE username='${req.body.user}'`
+                        ,(err,result)=>{
+                            if(err){
+                                console.log('COOKIE ATTACH QUERY FAILED')
+                                reject(err)
+                                throw(err)
+                            } else {
+                                console.log("COOKIE ATTACH QUERY SUCCEEDED")
+                                resolve(result.rows[0].trackingnumber)
+                            }
                         })
-                        .then((response)=>{
-                            res.cookie('ID', newCookie.toString())
-                            next()
-                        })
-                        .catch(e=>console.log(e.stack))
+                    })
                 })
+            }();
+            req.body = infoForCookie
+            next()
     },
 
 

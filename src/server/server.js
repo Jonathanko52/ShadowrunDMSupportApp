@@ -27,7 +27,8 @@ app.post('/signin',
 //adds new user to elephantSQL,  attaches cookie, creates a mlab table for them, and returns to login page
 app.post('/register',
     authController.registerUser,
-    authController.attachCookieOnRegister,
+    authController.pullCookieOnRegister,
+    authController.attachCookie,
     taskController.createSheet,
     (req,res,next)=>{res.sendFile(path.join(__dirname + './../../views/login.html'))})
     // (req,res,next)=>{res.json()}
