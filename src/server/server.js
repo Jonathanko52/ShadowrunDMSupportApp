@@ -26,7 +26,9 @@ app.post('/signin',
 
 //adds new user to elephantSQL,  attaches cookie, creates a mlab table for them, and returns to login page
 app.post('/register',
+    authController.clearCookie,
     authController.registerUser,
+    authController.clearCookie,
     authController.pullCookieOnRegister,
     authController.attachCookie,
     taskController.createSheet,

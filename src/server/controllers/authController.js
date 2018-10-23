@@ -8,7 +8,11 @@ const dbUrl = 'postgres://ywrnewtivhqrvb:6946f679a0a0030378ed2bb7ad2bc8459da26a6
 
 
 module.exports={
-
+    clearCookie:(req,res,next)=>{
+        res.clearCookie('ID');
+        console.log("COOKIE CLEARED")
+        next()
+    },
     //checks if user/password combination exists, returns the associated ID number in the req.body
     checkUser: async(req,res,next)=>{
         const data = await function promiseReturningThingy(){
@@ -72,7 +76,7 @@ module.exports={
                                 reject(err)
                                 throw(err)
                             } else {
-                                console.log("COOKIE ATTACH QUERY SUCCEEDED")
+                                console.log("COOKIE ATTACH QUERY SUCCEEDED", result.rows[0].trackingnumber)
                                 resolve(result.rows[0].trackingnumber)
                             }
                         })
