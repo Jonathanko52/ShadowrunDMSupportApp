@@ -1,5 +1,5 @@
 import * as types from '../action/actionTypes.js'
-// const port = process.env.PORT || 'http://localhost:5000';
+
 
 const initialState = {
   boxDisplay:'meleeWeapon',
