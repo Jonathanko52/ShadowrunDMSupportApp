@@ -47,6 +47,12 @@ export const REMOVE_SKILL = 'REMOVE_SKILL'
 export const REMOVE_SPELL = 'REMOVE_SPELL'
 export const REMOVE_VEHICLE = 'REMOVE_VEHICLE'
 
+//actions for setting current equipment
+export const SET_TO_CURRENT_MELEE ='SET_TO_CURRENT_MELEE'
+export const SET_TO_CURRENT_RANGED ='SET_TO_CURRENT_RANGED'
+export const SET_TO_CURRENT_SPELL ='SET_TO_CURRENT_SPELL'
+export const SET_TO_CURRENT_ARMOR ='SET_TO_CURRENT_ARMOR'
+
 //fetch actions
 
 export const ITEM_HAS_ERRORED = 'ITEM_HAS_ERRORED'

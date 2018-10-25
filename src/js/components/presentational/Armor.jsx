@@ -1,18 +1,15 @@
 import React from "react";
 
 const Armor = (props) => (
-    <form className = {props.className} onSubmit={(event)=>{
-        event.preventDefault()
-        props.remove(props.ind)
-
-        }}>
+    <div>
     <b>Armor:</b><input defaultValue={props.armor}></input>
     <b>Rating:</b><input defaultValue={props.rating}></input>
     <b>Notes:</b><input defaultValue={props.notes}></input>
 
-   <input type="submit" value = "Remove"></input>
+      <button onClick={()=>{props.remove(props.ind)} }>remove</button>
+      <button onClick={()=>{props.setToCurrentArmor(props.ind)} }>Set to current</button>
 
-   </form>
+   </div>
 );
 
 export default Armor;

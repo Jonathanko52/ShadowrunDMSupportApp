@@ -10,8 +10,8 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   // create functions that will dispatch action creators
-  remove: (ind)=>dispatch(actions.removeArmor(ind))
-
+  remove: (ind)=>dispatch(actions.removeArmor(ind)),
+  setToCurrentArmor: (ind) =>dispatch(actions.setToCurrentArmor(ind)) 
 });
 
 class ArmorContainer extends React.Component {
@@ -22,7 +22,7 @@ class ArmorContainer extends React.Component {
     render() {
       let returnArr = [];
       this.props.armors.forEach((cur,ind)=>{
-        returnArr.push(<Armor ind = {ind} remove={this.props.remove} key={ind} armor={cur.armor} rating={cur.rating} notes={cur.notes}/>)
+        returnArr.push(<Armor ind = {ind} setToCurrentArmor={this.props.setToCurrentArmor} remove={this.props.remove} key={ind} armor={cur.armor} rating={cur.rating} notes={cur.notes}/>)
       
       });
 

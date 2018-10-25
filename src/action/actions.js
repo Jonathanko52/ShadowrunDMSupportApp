@@ -208,4 +208,25 @@ export const removeVehicle = (data)=>({
   payload: data
 })
 
+//set to current actions
 
+export const setToCurrentMelee=(data)=>({
+  type:types.SET_TO_CURRENT_MELEE,
+  payload:data
+})
+  
+export const setToCurrentRanged=(data)=>({
+  type:types.SET_TO_CURRENT_RANGED,
+  payload:data
+})
+
+export const setToCurrentSpell=(data)=>({
+  type:types.SET_TO_CURRENT_SPELL,
+  payload:data
+})
+  
+export const setToCurrentArmor=(data)=>({
+  type:types.SET_TO_CURRENT_ARMOR,
+  payload:data
+})
+  

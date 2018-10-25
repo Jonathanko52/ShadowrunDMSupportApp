@@ -1,5 +1,5 @@
 import React from "react";
-import SkillsContainer from '../container/SpellContainer.jsx'
+import SkillsContainer from '../container/SkillsContainer.jsx'
 
 
 const Skills = (props) => (

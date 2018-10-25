@@ -7,6 +7,8 @@ import Equipment from './Equipment.jsx'
 import General from './General.jsx'
 import Magic from './Magic.jsx'
 import Skills from './Skills.jsx'
+import Rolls from './Rolls.jsx'
+
 import {Link, Route} from 'react-router-dom';
 
 
@@ -68,15 +70,17 @@ class MainContainer extends Component {
           </nav>
         </div>
         <div>
+          <nav>
+            <Link to="/rolls">ROLLS</Link>
+          </nav>
+        </div>
+        <div>
           <Route path='/general' component = {General} /> 
           <Route path="/equipment" component = {Equipment} /> 
           <Route path="/skills" component = {Skills} /> 
           <Route path="/magic" component = {Magic} /> 
+          <Route path="/rolls" component = {Rolls} /> 
         </div>
-        {/* <General/> */}
-        {/* <Equipment/> */}
-        {/* <Skills/> */}
-        {/* <Magic/> */}
 
         <button onClick = {()=>{
           let choiceConfirmed = confirm("Are you sure you want to overwrite your previous sheet?")

@@ -10,8 +10,8 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   // create functions that will dispatch action creators
-  remove: (ind)=>dispatch(actions.removeMeleeWeapon(ind))
-
+  remove: (ind)=>dispatch(actions.removeMeleeWeapon(ind)),
+  setToCurrentMelee: (ind) =>dispatch(actions.setToCurrentMelee(ind)) 
 });
 
 class MeleeWeaponsContainer extends React.Component {
@@ -22,7 +22,7 @@ class MeleeWeaponsContainer extends React.Component {
     render() {
       let returnArr = [];
       this.props.meleeWeapons.forEach((cur,ind)=>{
-        returnArr.push(<MeleeWeapon ind = {ind} remove={this.props.remove} key={ind} weapon={cur.weapon} reach={cur.reach} damage={cur.damage} accuracy={cur.accuracy} ap={cur.ap} />)
+        returnArr.push(<MeleeWeapon ind = {ind} setToCurrentMelee={this.props.setToCurrentMelee} remove={this.props.remove} key={ind} weapon={cur.weapon} reach={cur.reach} damage={cur.damage} accuracy={cur.accuracy} ap={cur.ap} />)
       
       });
 

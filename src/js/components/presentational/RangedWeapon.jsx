@@ -1,11 +1,7 @@
 import React from "react";
 
 const RangedWeapon = (props) => (
-    <form className = {props.className} onSubmit={(event)=>{
-        event.preventDefault()
-        props.remove(props.ind)
-
-        }}>
+    <div>
     <b>Weapon:</b><input defaultValue={props.weapon}></input>
     <b>Damage:</b><input defaultValue={props.damage}></input>
     <b>Accuracy:</b><input defaultValue={props.accuracy}></input>
@@ -14,8 +10,10 @@ const RangedWeapon = (props) => (
     <b>RC:</b><input defaultValue={props.rc}></input>
     <b>Ammo:</b><input defaultValue={props.ammo}></input>
 
-   <input type="submit" value = "Remove"></input>
-   </form>
+      <button onClick={()=>{props.remove(props.ind)} }>remove</button>
+      <button onClick={()=>{props.setToCurrentRanged(props.ind)} }>Set to current</button>
+
+   </div>
  
 );
 

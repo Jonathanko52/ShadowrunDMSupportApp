@@ -12,7 +12,11 @@ const initialState = {
  rangedWeaponArray:[],
  skillArray:[],
  spellArray:[],
- vehicleArray:[]
+ vehicleArray:[],
+ curMeleeWeapon:{},
+ curRangedWeapon:{},
+ curSpell:{},
+ curArmor:{}
 }
 
 const addReducer = (state=initialState, action)=>{
@@ -245,9 +249,39 @@ const addReducer = (state=initialState, action)=>{
       vehicleArray:newArray
     }
 
+    ///Actions for setting current equipment
+
+    case types.SET_TO_CURRENT_MELEE:
+
+    return{
+      ...state,
+      curMeleeWeapon:state.meleeWeaponArray[action.payload]
+    }
+
+    case types.SET_TO_CURRENT_RANGED:
+
+    return{
+      ...state,
+      curRangedWeapon:state.rangedWeaponArray[action.payload]
+    }
+
+    case types.SET_TO_CURRENT_SPELL:
+
+    return{
+      ...state,
+      curSpell:state.spellArray[action.payload]
+    }
+    
+    case types.SET_TO_CURRENT_ARMOR:
+
+    return{
+      ...state,
+      curArmor:state.armorArray[action.payload]
+    }
 
 
 
+    ////////////
     default:
     return state;
   }
