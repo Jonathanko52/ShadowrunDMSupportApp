@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const htmlWebPackPlugin = new HtmlWebPackPlugin({
   template: "./views/login.html",
-  filename: "./BLARGH.html"
+  filename: "./login.html"
 });
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
   filename: "styles.css"
@@ -39,5 +39,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlWebPackPlugin,miniCssExtractPlugin]
+  plugins: [
+    htmlWebPackPlugin,
+    miniCssExtractPlugin
+  ]
 };
