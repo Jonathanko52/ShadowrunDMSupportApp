@@ -1,15 +1,19 @@
-// const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-// const htmlWebpackPlugin = new HtmlWebPackPlugin({
-//   template: "./views/index.html",
-//   filename: "./index.html"
-// });
+const htmlWebPackPlugin = new HtmlWebPackPlugin({
+  template: "./views/index.html",
+  filename: "./index.html"
+});
+const miniCssExtractPlugin = new MiniCssExtractPlugin({
+  filename: "style.css"
+});
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/assets/js'
+    path: __dirname + '/assets'
   },
   module: {
     rules: [
@@ -26,22 +30,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
-          }
+          
+             "style-loader",
+             MiniCssExtractPlugin.loader,
+             "css-loader"
+
         ]
       }
     ]
   },
-  // plugins: [htmlWebpackPlugin]
+  plugins: [htmlWebPackPlugin,miniCssExtractPlugin]
 };

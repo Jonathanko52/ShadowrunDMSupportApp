@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store.js';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import PropTypes from 'prop-types'
+import './styles.css'
 
 
 
