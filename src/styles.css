@@ -63,3 +63,15 @@
 .personalDataText{
     padding-left: 10px;
 }
+
+.LoginBox{
+    width: 300px;
+    height: 335px;
+    top:0;
+    left:0;
+    background-color: darkgray;
+    float: left;
+    border: black;
+    border-width: 0.2px;
+    border-style: solid;
+}

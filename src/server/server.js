@@ -14,7 +14,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use('/', express.static(__dirname + './../../assets'))
 
 app.get('/', (req,res)=>{
-    res.sendFile(path.join(__dirname + './../../views/login.html'));
+    // res.sendFile(path.join(__dirname, './../../views/login.html'));
+    res.sendFile(path.join(__dirname, './../../assets/Blargh.html'));
+
 });
 
 //checks if user is present in elepaht, attaches id

@@ -2,11 +2,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const htmlWebPackPlugin = new HtmlWebPackPlugin({
-  template: "./views/index.html",
-  filename: "./index.html"
+  template: "./views/login.html",
+  filename: "./BLARGH.html"
 });
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
-  filename: "style.css"
+  filename: "styles.css"
 });
 
 module.exports = {
