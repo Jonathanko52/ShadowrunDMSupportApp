@@ -1,5 +1,4 @@
 import * as types from './actionTypes.js'
-// const port = process.env.PORT || 'http://localhost:5000';
 
 
 //Actions associated with application state/server stuff
@@ -64,7 +63,7 @@ export const fetchProductsError = error => ({
 
 export function retrieveDatabaseEntry() {
   console.log('INITIATING RETRIEVE DATABASE ENTRY ACTION')
-  return dispatch => {
+  return function(dispatch){
 
     dispatch(fetchProductsBegin());
     return fetch(`/retrieveFromDatabase`,{
