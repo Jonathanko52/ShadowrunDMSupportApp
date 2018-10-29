@@ -29,11 +29,6 @@ export const updateDatabaseEntry = (state)=>({
   payload: state
 })
 
-export const retrieveDatabaseEntry = (state)=>({
-  type:types.RETRIEVE_DATABASE_ENTRY,
-  payload: state
-})
-
 export const retrieveAndSetAddRemove = (state)=>({
   type:types.RETRIEVE_AND_SET_ADDREMOVE,
   payload: state
@@ -67,8 +62,10 @@ export const fetchProductsError = error => ({
   payload: error
 });
 
-export function fetchProducts() {
+export function retrieveDatabaseEntry() {
+  console.log('INITIATING RETRIEVE DATABASE ENTRY ACTION')
   return dispatch => {
+
     dispatch(fetchProductsBegin());
     return fetch(`/retrieveFromDatabase`,{
           method: "GET",

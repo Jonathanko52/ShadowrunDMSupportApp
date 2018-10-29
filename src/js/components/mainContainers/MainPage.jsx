@@ -32,7 +32,7 @@ return {
 const mapDispatchToProps = dispatch => ({
   updateDatabaseEntry: (state)=> dispatch(actions.updateDatabaseEntry(state)),
   createDatabaseEntry: (state)=>dispatch(actions.createDatabaseEntry(state)),
-  retrieveDatabaseEntry: ()=>dispatch(actions.fetchProducts()),
+  retrieveDatabaseEntry: ()=>dispatch(actions.retrieveDatabaseEntry()),
   setAddRemoveState:(state)=>dispatch(actions.retrieveAndSetAddRemove(state)),
   setAppState:(state)=>dispatch(actions.retrieveAndSetApp(state)),
   setPersonalState:(state)=>dispatch(actions.retrieveAndSetPersonal(state))
