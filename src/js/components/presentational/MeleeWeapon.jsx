@@ -9,7 +9,7 @@ const MeleeWeapon = (props) => (
     <b>Accuracy:</b><input defaultValue={props.accuracy}></input>
     <b>AP:</b><input defaultValue={props.ap}></input>
       <button onClick={()=>{props.remove(props.ind)} }>remove</button>
-      <button onClick={()=>{props.setToCurrentMelee(props.ind)} }>Set to currenct</button>
+      <button onClick={()=>{props.setToCurrentMelee(props.ind)} }>Set to current</button>
    </div>
 
 );

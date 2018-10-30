@@ -1,5 +1,4 @@
 import * as types from './actionTypes.js'
-// const port = process.env.PORT || 'http://localhost:5000';
 
 
 //Actions associated with application state/server stuff
@@ -26,11 +25,6 @@ export const createDatabaseEntry = (state)=>({
 
 export const updateDatabaseEntry = (state)=>({
   type:types.UPDATE_DATABASE_ENTRY,
-  payload: state
-})
-
-export const retrieveDatabaseEntry = (state)=>({
-  type:types.RETRIEVE_DATABASE_ENTRY,
   payload: state
 })
 
@@ -67,8 +61,10 @@ export const fetchProductsError = error => ({
   payload: error
 });
 
-export function fetchProducts() {
-  return dispatch => {
+export function retrieveDatabaseEntry() {
+  console.log('INITIATING RETRIEVE DATABASE ENTRY ACTION')
+  return function(dispatch){
+
     dispatch(fetchProductsBegin());
     return fetch(`/retrieveFromDatabase`,{
           method: "GET",

@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const htmlWebPackPlugin = new HtmlWebPackPlugin({
-  template: "./views/login.html",
+  template: "./views/index.html",
   filename: "./login.html"
 });
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
