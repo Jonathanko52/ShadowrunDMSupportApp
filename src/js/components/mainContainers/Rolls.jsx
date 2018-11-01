@@ -4,7 +4,7 @@ import CurrentWeaponContainer from '../container/CurrentWeaponContainer.jsx'
 
 
 const Rolls = (props) => (
-    <div>
+    <div className="PageContainer">
     <p>Rolls</p>
     <CurrentWeaponContainer />
     <RollsContainer />

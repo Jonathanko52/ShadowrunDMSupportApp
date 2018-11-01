@@ -6,7 +6,7 @@ import Quality  from '../container/QualityContainer.jsx';
 import Augmentation from '../container/AugmentationContainer.jsx'
 
 const General = (props) => (
-    <div>
+    <div className="PageContainer">
     <p>GENERAL</p>
     <Attributes/>
     <PersonalData/>

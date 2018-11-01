@@ -3,7 +3,7 @@ import SkillsContainer from '../container/SkillsContainer.jsx'
 
 
 const Skills = (props) => (
-    <div>
+    <div className="PageContainer">
     <p>Skills</p>
     <SkillsContainer />
     </div>

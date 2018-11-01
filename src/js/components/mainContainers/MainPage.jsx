@@ -47,33 +47,35 @@ class MainContainer extends Component {
 
   render() {
     return (
-      <div>
-        <p className='test'> Thingy</p>
-        <div>
-          <nav>
-            <Link to="/general">GENERAL TAB</Link>          
-          </nav>
+      <div className='Page'>
+        <div className='NavigationBar'>
+            <div>
+              <nav>
+                <Link to="/general">GENERAL TAB</Link>          
+              </nav>
+            </div>
+            <div>
+              <nav>
+                <Link to="/equipment">EQUIPMENT</Link>
+              </nav>
+            </div>
+            <div>
+              <nav>
+                <Link to="/skills">SKILLS</Link>
+              </nav>
+            </div>
+            <div>
+              <nav>
+                <Link to="/magic">MAGIC</Link>
+              </nav>
+            </div>
+            <div>
+              <nav>
+                <Link to="/rolls">ROLLS</Link>
+              </nav>
+            </div>
         </div>
-        <div>
-          <nav>
-            <Link to="/equipment">EQUIPMENT</Link>
-          </nav>
-        </div>
-        <div>
-          <nav>
-            <Link to="/skills">SKILLS</Link>
-          </nav>
-        </div>
-        <div>
-          <nav>
-            <Link to="/magic">MAGIC</Link>
-          </nav>
-        </div>
-        <div>
-          <nav>
-            <Link to="/rolls">ROLLS</Link>
-          </nav>
-        </div>
+        
         <div>
           <Route path='/general' component = {General} /> 
           <Route path="/equipment" component = {Equipment} /> 
@@ -81,22 +83,22 @@ class MainContainer extends Component {
           <Route path="/magic" component = {Magic} /> 
           <Route path="/rolls" component = {Rolls} /> 
         </div>
-
-        <button onClick = {()=>{
-          let choiceConfirmed = confirm("Are you sure you want to overwrite your previous sheet?")
-          if(choiceConfirmed){
-            alert("Sheet Save to DB")
-            this.props.updateDatabaseEntry(this.props.fullAppState)
-          }
-        }}>Save to Database</button>
-        <button onClick = {()=>{
-          let choiceConfirmed = confirm("Are you sure you don't want to save your current sheet?")
-          if(choiceConfirmed){
-            alert("Sheet loaded")
-           this.props.retrieveDatabaseEntry()
-          }
-        }}>Retrieve from Database</button>
-          
+        <div>
+          <button onClick = {()=>{
+            let choiceConfirmed = confirm("Are you sure you want to overwrite your previous sheet?")
+            if(choiceConfirmed){
+              alert("Sheet Save to DB")
+              this.props.updateDatabaseEntry(this.props.fullAppState)
+            }
+          }}>Save to Database</button>
+          <button onClick = {()=>{
+            let choiceConfirmed = confirm("Are you sure you don't want to save your current sheet?")
+            if(choiceConfirmed){
+              alert("Sheet loaded")
+            this.props.retrieveDatabaseEntry()
+            }
+          }}>Retrieve from Database</button>
+        </div>
         <SelectBox />
       </div>
     );

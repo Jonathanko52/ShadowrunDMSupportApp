@@ -41,7 +41,7 @@ class SelectBox extends Component {
   
     render() {
       return (
-        <div className='AddBox'>
+        <div className='SelectBox'>
         <p className = 'header'><b>Add An Item</b></p>
         <select id="BoxSelect" onChange={this.handleChange}>
         <option value="meleeWeapon">Melee Weapon</option>

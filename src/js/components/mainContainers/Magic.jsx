@@ -4,7 +4,7 @@ import Powers from '../container/PowerContainer.jsx'
 
 
 const SpellsAndPowers = (props) => (
-    <div>
+    <div className="PageContainer">
     <p>Magic</p>
     <p>Spells and Powers</p>
     <Spells />
