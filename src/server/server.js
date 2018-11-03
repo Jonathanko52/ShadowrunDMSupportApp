@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use('/', express.static(__dirname + './../../assets'))
 
 app.get('/', (req,res)=>{
+    console.log("LOGIN PAGE")
     res.sendFile(path.join(__dirname, './../../assets/login.html'));
 
 });
@@ -22,7 +23,10 @@ app.get('/', (req,res)=>{
 app.post('/signin', 
     authController.checkUser,
     authController.attachCookie,  
-    (req,res,next)=>{res.sendFile(path.join(__dirname + './../../assets/index.html'))}
+    (req,res,next)=>{
+        console.log('SIGNED IN')
+        res.sendFile(path.join(__dirname + './../../assets/index.html'))
+    }
 )
 
 //adds new user to elephantSQL,  attaches cookie, creates a mlab table for them, and returns to login page
