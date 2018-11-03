@@ -15,7 +15,7 @@ app.use('/assets', express.static(__dirname + './../../assets'))
 
 app.get('/', (req,res)=>{
     console.log("LOGIN PAGE")
-    res.sendFile(path.join(__dirname, '/assets/login.html'));
+    res.sendFile(path.join(__dirname, './../../assets/login.html'));
 
 });
 
@@ -25,7 +25,7 @@ app.post('/signin',
     authController.attachCookie,  
     (req,res,next)=>{
         console.log('SIGNED IN')
-        res.sendFile(path.join(__dirname + '/assets/index.html'))
+        res.sendFile(path.join(__dirname + './../../assets/index.html'))
     }
 )
 
