@@ -29,7 +29,7 @@ class ContactContainer extends React.Component {
 
       return (
         <div className='WeaponsContainer'>
-        <p className = 'header'><b>Contacts</b></p>
+        <p className = 'header'><h4>Contacts</h4></p>
           {returnArr}
         </div>
       );

@@ -29,7 +29,7 @@ class SpellContainer extends React.Component {
 
       return (
         <div className='WeaponsContainer'>
-        <p className = 'header'><b>Spells</b></p>
+        <p className = 'header'><h4>Spells</h4></p>
           {returnArr}
         </div>
       );

@@ -2,7 +2,7 @@ import React from "react";
 
 const TextBox = (props) => (
     <form className = {props.boxClass} >
-    <b>{props.name}:</b><input 
+    {props.name}:<input 
     id = {props.storeVal} 
     size = {props.boxSize} 
     value = {props.curVal} 

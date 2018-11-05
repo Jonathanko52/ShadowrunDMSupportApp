@@ -51,7 +51,7 @@ class MainContainer extends Component {
         <div className='NavigationBar'>
             <div>
               <nav>
-                <Link to="/general">GENERAL TAB</Link>          
+                <Link to="/">GENERAL</Link>          
               </nav>
             </div>
             <div>
@@ -74,32 +74,31 @@ class MainContainer extends Component {
                 <Link to="/rolls">ROLLS</Link>
               </nav>
             </div>
+            <button className='serverButton' onClick = {()=>{
+                let choiceConfirmed = confirm("Are you sure you want to overwrite your previous sheet?")
+                if(choiceConfirmed){
+                  alert("Sheet Save to DB")
+                  this.props.updateDatabaseEntry(this.props.fullAppState)
+                }
+              }}>Save to Database</button>
+              <button className='serverButton' onClick = {()=>{
+                let choiceConfirmed = confirm("Are you sure you don't want to save your current sheet?")
+                if(choiceConfirmed){
+                  alert("Sheet loaded")
+                this.props.retrieveDatabaseEntry()
+                }
+              }}>Retrieve from Database</button>
         </div>
-        
-        <div>
-          <Route path='/general' component = {General} /> 
-          <Route path="/equipment" component = {Equipment} /> 
-          <Route path="/skills" component = {Skills} /> 
-          <Route path="/magic" component = {Magic} /> 
-          <Route path="/rolls" component = {Rolls} /> 
-        </div>
-        <div>
-          <button onClick = {()=>{
-            let choiceConfirmed = confirm("Are you sure you want to overwrite your previous sheet?")
-            if(choiceConfirmed){
-              alert("Sheet Save to DB")
-              this.props.updateDatabaseEntry(this.props.fullAppState)
-            }
-          }}>Save to Database</button>
-          <button onClick = {()=>{
-            let choiceConfirmed = confirm("Are you sure you don't want to save your current sheet?")
-            if(choiceConfirmed){
-              alert("Sheet loaded")
-            this.props.retrieveDatabaseEntry()
-            }
-          }}>Retrieve from Database</button>
-        </div>
-        <SelectBox />
+          <div className='DisplayedPageAndBox'>
+            <div className='DisplayedPage'>
+              <Route path='/' exact component = {General} /> 
+              <Route path="/equipment" component = {Equipment} /> 
+              <Route path="/skills" component = {Skills} /> 
+              <Route path="/magic" component = {Magic} /> 
+              <Route path="/rolls" component = {Rolls} /> 
+            </div>
+              <SelectBox />
+          </div>
       </div>
     );
   }

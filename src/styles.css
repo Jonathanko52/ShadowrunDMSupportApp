@@ -1,46 +1,75 @@
 html{
-    background-color: rgb(58, 57, 57);
+    background-color: rgb(26, 26, 26);
     color: orange;
     border: orange;
     font-family: Arial, sans-serif;
 
 }
+
 .Page{
     display:flex;
+    width: 100%;
+    min-height:100vh;
 }
 
 .NavigationBar{
+    line-height: 55px;
     width: 200px;
-    height: 100vh;
+    height: 100%;
     border-width: 1px;
     border-style: solid;
     float: left;
+    min-height:100vh;
+
 }
 
+
+.DisplayedPageAndBox{
+    border-width: 1px;
+    border-style: solid;
+    height: 100%;
+    width: 80%;
+    float: left;
+}
+.DisplayedPage{
+    display: flex;
+    height: 70%;
+    width:100%
+}
+
+.displayedpage{
+    width:100%;
+}
 
 .SelectBox{    
-    width: 1000px;
-    height: 200px;
-    top:0;
-    left:0;
     border-width: 1px;
     border-style: solid;
-    float: left;
+    float:left;
+    width: 100%;
+    height: 25%;
 }
+
+
 .MainContainer{
     width:30;
 }
 
-.PageContainer{
-    width:100%;
-    height: 100%;
-    /* border-width: 1px;
-    border-style: solid; */
+
+.WeaponsContainer{
+    line-height: 35px;
+    width: 49%;
+    height: 200px;
+    top:0;
+    left:0;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
     float: left;
 }
 
-.WeaponsContainer{
-    width: 49%;
+.SkillsContainer{
+    line-height: 35px;
+    width: 98%;
     min-width:300px;
     height: 200px;
     top:0;
@@ -52,7 +81,8 @@ html{
 }
 
 .PersonalData{
-    width: 300px;
+    line-height: 25px;
+    width: 39.5%;
     height: 400px;
     top:0;
     left:0;
@@ -62,7 +92,9 @@ html{
 }
 
 .Attributes{
-        width: 601px;
+    line-height: 25px;
+        width: 60%;
+        /* min-width:600px; */
         height: 400px;
         top:0;
         left:0;
@@ -72,6 +104,7 @@ html{
 }
 
 .AttributesColumn{
+    
     width: 300px;
     height: 335px;
     top:0;
@@ -79,6 +112,8 @@ html{
     float: left;
 
 }
+
+
 
 .header{
     font-size: 20px;
@@ -99,7 +134,24 @@ html{
     float: left;
 }
 
+.serverButton{
+    width: 80%;
+    height: 40px;
+    position:relative;
+    left:10%;
+}
+
 a{
     font-size: 18px;
     color:orange;
 }
+
+b{
+    font-size: 15px;
+}
+
+h4{
+    float: middle;
+    font-size:18px;
+}
+

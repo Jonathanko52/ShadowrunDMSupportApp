@@ -40,7 +40,7 @@ class VehicleContainer extends React.Component {
 
       return (
         <div className='WeaponsContainer'>
-        <p className = 'header'><b>Vehicles</b></p>
+        <p className = 'header'><h4>Vehicles</h4></p>
           {returnArr}
         </div>
       );

@@ -26,7 +26,7 @@ class IdsLifestyleCurrency extends React.Component {
 
       return (
         <div className='PersonalData'>
-          <p className = 'header'><b>Ids / Lifestyles / Currencies</b></p>
+          <p className = 'header'><h4>Ids / Lifestyles / Currencies</h4></p>
           <TextBox name = 'Primary Lifestyle'
                    boxSize = '10'
                    boxProps = 'personalDataText'

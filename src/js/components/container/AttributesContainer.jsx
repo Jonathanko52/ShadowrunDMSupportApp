@@ -25,7 +25,7 @@ class AttributesContainer extends React.Component {
     render() {
       return (
         <div className = 'Attributes'>
-            <p className = 'header'><b>Attributes</b></p>
+            <p className = 'header'><h4>Attributes</h4></p>
             <div className = "AttributesColumn">
               <TextBox name = 'Body'
                     boxSize = '10'

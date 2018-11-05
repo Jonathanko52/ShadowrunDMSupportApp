@@ -28,8 +28,8 @@ class SkillsContainer extends React.Component {
       });
 
       return (
-        <div className='WeaponsContainer'>
-        <p className = 'header'><b>Skills</b></p>
+        <div className='SkillsContainer'>
+        <p className = 'header'><h4>Skills</h4></p>
           {returnArr}
         </div>
       );

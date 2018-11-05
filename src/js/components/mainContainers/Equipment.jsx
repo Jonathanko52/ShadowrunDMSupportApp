@@ -7,8 +7,8 @@ import RangedWeapon from '../container/RangedWeaponsContainer.jsx'
 import Vehicle from '../container/VehicleContainer.jsx'
 
 const Equipment = (props) => (
-    <div className="PageContainer">
-    <p>EQUIPMENT</p>
+    <div className='displayedpage'>
+    <h4>EQUIPMENT</h4>
     <Armor />
     <Cyberdeck />
     <Gear />

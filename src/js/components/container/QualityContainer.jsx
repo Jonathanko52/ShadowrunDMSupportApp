@@ -28,7 +28,7 @@ class PowerContainer extends React.Component {
 
       return (
         <div className='WeaponsContainer'>
-        <p className = 'header'><b>Qualities</b></p>
+        <p className = 'header'><h4>Qualities</h4></p>
           {returnArr}
         </div>
       );

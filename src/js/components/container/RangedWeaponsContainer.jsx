@@ -27,7 +27,7 @@ class RangedWeaponsContainer extends React.Component {
 
       return (
         <div className='WeaponsContainer'>
-        <p className = 'header'><b>RangedWeapons</b></p>
+        <p className = 'header'><h4>RangedWeapons</h4></p>
           {returnArr}
         </div>
       );

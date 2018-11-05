@@ -3,8 +3,8 @@ import SkillsContainer from '../container/SkillsContainer.jsx'
 
 
 const Skills = (props) => (
-    <div className="PageContainer">
-    <p>Skills</p>
+    <div className='displayedpage'>
+    <h4>Skills</h4>
     <SkillsContainer />
     </div>
 );

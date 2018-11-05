@@ -26,7 +26,7 @@ class CoreCombatInfo extends React.Component {
 
       return (
         <div className='Core Combat Info'>
-          <p className = 'header'><b>Ids / Lifestyles / Currencies</b></p>
+          <p className = 'header'><h4>Ids / Lifestyles / Currencies</h4></p>
 
         </div>
       );

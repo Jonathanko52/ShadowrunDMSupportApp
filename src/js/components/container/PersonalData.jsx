@@ -25,7 +25,7 @@ class PersonalData extends React.Component {
 
       return (
         <div className='PersonalData'>
-          <p className = 'header'><b>Personal Data</b></p>
+          <p className = 'header'><h4>Personal Data</h4></p>
           <TextBox name = 'Name/Primary Alias'
                    boxSize = '10'
                    boxClass = 'personalDataText'

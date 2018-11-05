@@ -30,7 +30,7 @@ class CyberdeckContainer extends React.Component {
 
       return (
         <div className='WeaponsContainer'>
-        <p className = 'header'><b>Cyberdeck</b></p>
+        <p className = 'header'><h4>Cyberdeck</h4></p>
           {returnArr}
         </div>
       );
